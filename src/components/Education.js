@@ -23,7 +23,7 @@ function Education() {
     ];
 
   // Sample experience data - replace with your own experience
-  const experience = [
+  /*const experience = [
     {
       id: 1,
       position: 'Software Developer',
@@ -40,7 +40,7 @@ function Education() {
       period: 'May 2022 - Dec 2022',
       description: 'Assisted in front-end development tasks using HTML, CSS, and JavaScript. Participated in code reviews and team meetings.'
     }
-  ];
+  ];*/
 
   return (
     <section id="education" className="education">
