@@ -1,0 +1,29 @@
+.hobbies-grid {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column; /* Stacks the cards vertically */
+  gap: 20px; /* Adds space between cards */
+  width: 800px; /* Set the desired width for the grid */
+  margin-left: auto; /* Centers the grid horizontally */
+  margin-right: auto; /* Centers the grid horizontally */
+}
+
+.hobby-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 100%; /* Makes each card take up the full width of the grid */
+}
+
+.hobby-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hobby-card h3 {
+  margin-bottom: 10px;
+  color: #2a2a72;
+}
+
+.hobby-card:hover {
+  transform: translateY(-10px);
+}

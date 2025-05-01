@@ -1,0 +1,51 @@
+.header {
+    background: linear-gradient(rgb(36, 34, 41), rgb(36, 34, 41)), url('https://source.unsplash.com/random/1600x900/?technology') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+  
+.header-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+  
+.header-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+  
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+}
+  
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+  
+@media (max-width: 768px) {
+    .header {
+      padding: 80% 20px;
+    }
+    
+    .header-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .header-content p {
+      font-size: 1.2rem;
+    }
+    
+    .header-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+}
