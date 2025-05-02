@@ -10,7 +10,7 @@ function About() {
             <div className="about-text">
                 <p>
                     Hi! I'm Cody, a sophomore Computer Engineering student at the University of Notre Dame from Aiea, Hawai'i. 
-                    I'm deeply interested in .
+                    I'm interested in computer architecture, VLSI design, and embedded systems applications.
                 </p>
                 <p>
                     I also love all things music, playing tennis, hiking, and having fun in the ocean! Lately, I have been really 
