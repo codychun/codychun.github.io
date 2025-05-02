@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from "react";
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
@@ -10,6 +11,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    document.title = "Cody Chun | Portfolio";
+  }, []);
   return (
     <div className="App">
       <Router>
