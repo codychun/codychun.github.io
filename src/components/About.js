@@ -9,7 +9,7 @@ function About() {
             <div className="about-content">
             <div className="about-text">
                 <p>
-                    Hi! I'm Cody, a sophomore Computer Engineering student at the University of Notre Dame from Aiea, Hawai'i. 
+                    Hi! I'm Cody, a junior Computer Engineering student at the University of Notre Dame from Aiea, Hawai'i. 
                     I'm interested in computer architecture, VLSI design, and embedded systems applications.
                 </p>
                 <p>
