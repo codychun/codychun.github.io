@@ -13,6 +13,7 @@ function Footer() {
           <Link to="/projects">Projects</Link>
           <Link to="/education">Education</Link>
           <Link to="/hobbies">Hobbies</Link>
+          <Link to="/alarm">Alarm</Link>
           <Link to="/contact">Contact</Link>
         </div>
         
