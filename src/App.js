@@ -9,6 +9,7 @@ import Education from './components/Education';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Alarm from './components/Alarm';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/education" element={<Education />} />
           <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/alarm"  element={<Alarm />} /> 
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
