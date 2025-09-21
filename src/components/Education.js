@@ -44,10 +44,8 @@ function Education() {
 
   return (
     <section id="education" className="education">
-      <h2>Education</h2>
-      
         <div className="timeline-section">
-          <h3>Education</h3>
+          <h2>Education</h2>
           <div className="timeline">
             {education.map(item => (
               <div className="timeline-item" key={item.id}>

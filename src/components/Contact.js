@@ -1,3 +1,4 @@
+import React from 'react';
 import './Contact.css';
 
 function Contact() {
@@ -17,21 +18,19 @@ function Contact() {
                     </div>
                 </div>
                         
-                <div className="contact-item">
-                    <div className="contact-icon"></div>
+                <a href="https://www.linkedin.com/in/cody-chun-056ab4286/" target="_blank" rel="noopener noreferrer" className="contact-item">
                     <div className="contact-text">
                         <h4>LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/cody-chun-056ab4286/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <p>Connect with me on LinkedIn</p>
                     </div>
-                </div>
+                </a>
                         
-                <div className="contact-item">
-                    <div className="contact-icon"></div>
+                <a href="https://github.com/codychun" target="_blank" rel="noopener noreferrer" className="contact-item">
                     <div className="contact-text">
                         <h4>GitHub</h4>
-                        <a href="https://github.com/codychun" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <p>View my projects and code</p>
                     </div>
-                </div>
+                </a>
 
             </div>
             </div>

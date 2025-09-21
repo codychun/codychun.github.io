@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import './Footer.css';
 
 function Header() {
   return (
@@ -9,6 +11,7 @@ function Header() {
         <p>University of Notre Dame | Computer Engineering</p>
         </div>
     </header>
+
   );
 }
 

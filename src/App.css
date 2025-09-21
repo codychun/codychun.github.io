@@ -20,79 +20,135 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: rgb(36, 34, 41, 0.6);
+  color: #1a1a1a;
+  background-color: #ffffff;
+  font-weight: 400;
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   flex: 1;
+  background-color: #ffffff;
 }
 
 section {
-  align-items: center;
-  margin-bottom: 60px;
-  padding: 30px;
-  background-color: rgba(229, 220, 224, 0.8);
+  padding: 60px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+section:last-child {
+  border-bottom: none;
 }
 
 h1, h2, h3 {
-  color: #22212c;
+  color: #1a1a1a;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 h2 {
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #f1f1f1;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   section {
-    padding: 20px;
+    padding: 40px 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
 .btn {
   display: inline-block;
-  background: #2a2a72;
+  background: #1a1a1a;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  font-size: 16px;
-  transition: background 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
 }
 
 .btn:hover {
-  background: #3a3a92;
+  background: #333333;
+  transform: translateY(-1px);
 }
 
 /* Grid for projects and skills */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: white;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: #ffffff;
+  padding: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  border-color: #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card h3 {
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }

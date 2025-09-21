@@ -1,8 +1,8 @@
 .footer {
-    background-color: rgb(36, 34, 41);
-    color: white;
-    padding: 40px 20px;
-    margin-top: 60px;
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+    padding: 2rem 20px;
+    border-top: 1px solid #e5e5e5;
   }
   
   .footer-content {
@@ -20,13 +20,14 @@
   }
   
   .footer-links a {
-    color: white;
+    color: #1a1a1a;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
+    font-weight: 500;
   }
   
   .footer-links a:hover {
-    color: #adb5bd;
+    color: #666666;
   }
   
   .social-links {
@@ -37,13 +38,14 @@
   }
   
   .social-links a {
-    color: white;
+    color: #1a1a1a;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
+    font-weight: 500;
   }
   
   .social-links a:hover {
-    color: #adb5bd;
+    color: #666666;
   }
   
   .copyright {
