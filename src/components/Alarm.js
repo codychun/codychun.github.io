@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Alarm.css";
 
 function Alarm() {
     const [alarm, setAlarm] = useState({
@@ -8,25 +7,86 @@ function Alarm() {
         isRinging: false
     });
     const [isConnected, setIsConnected] = useState(false);
+    const [device, setDevice] = useState(null);
+    const [characteristic, setCharacteristic] = useState(null);
+    const [statusCharacteristic, setStatusCharacteristic] = useState(null);
+
+    // BLE Service and Characteristic UUIDs - must match the Pico code
+    const ALARM_SERVICE_UUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
+    const COMMAND_CHAR_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";  // RX - write commands here
+    const ALARM_CHAR_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";    // TX - read status from here
+
+    // Command codes - must match the Pico code
+    const CMD_SET_ALARM = 0x01;
+    const CMD_ARM = 0x02;
+    const CMD_DISARM = 0x03;
+    const CMD_SNOOZE = 0x04;
+    const CMD_STOP = 0x05;
+    const CMD_TEST = 0x06;
 
     const handleTimeChange = (e) => {
-        setAlarm(prev => ({ ...prev, time: e.target.value }));
+        const newTime = e.target.value;
+        setAlarm(prev => ({ ...prev, time: newTime }));
+        
+        // Send time to Pico if connected
+        if (characteristic) {
+            const [hours, minutes] = newTime.split(':').map(Number);
+            sendCommand(CMD_SET_ALARM, [hours, minutes]);
+        }
     };
 
-    const toggleArm = () => {
-        setAlarm(prev => ({ ...prev, isArmed: !prev.isArmed }));
+    const sendCommand = async (command, data = []) => {
+        if (!characteristic) {
+            console.log('No BLE characteristic available');
+            return;
+        }
+
+        try {
+            const commandData = new Uint8Array([command, ...data]);
+            console.log('Sending BLE command:', {
+                command: command,
+                data: data,
+                fullCommand: Array.from(commandData)
+            });
+            
+            await characteristic.writeValue(commandData);
+            console.log(`✓ Command sent successfully: ${command}, data: ${data}`);
+        } catch (error) {
+            console.error('Failed to send BLE command:', error);
+            alert(`BLE command failed: ${error.message}`);
+        }
     };
 
-    const snooze = () => {
+    const toggleArm = async () => {
+        const newArmedState = !alarm.isArmed;
+        setAlarm(prev => ({ ...prev, isArmed: newArmedState }));
+        
+        if (characteristic) {
+            await sendCommand(newArmedState ? CMD_ARM : CMD_DISARM);
+        }
+    };
+
+    const snooze = async () => {
         setAlarm(prev => ({ ...prev, isRinging: false }));
+        if (characteristic) {
+            await sendCommand(CMD_SNOOZE);
+        }
     };
 
-    const stop = () => {
+    const stop = async () => {
         setAlarm(prev => ({ ...prev, isRinging: false, isArmed: false }));
+        if (characteristic) {
+            await sendCommand(CMD_STOP);
+        }
     };
 
-    const testAlarm = () => {
-        setAlarm(prev => ({ ...prev, isRinging: !prev.isRinging }));
+    const testAlarm = async () => {
+        const newRingingState = !alarm.isRinging;
+        setAlarm(prev => ({ ...prev, isRinging: newRingingState }));
+        
+        if (characteristic) {
+            await sendCommand(CMD_TEST);
+        }
     };
 
     const connectBluetooth = async () => {
@@ -36,25 +96,121 @@ function Alarm() {
                 return;
             }
             
+            console.log('Requesting Bluetooth device...');
             const device = await navigator.bluetooth.requestDevice({
                 filters: [{ name: 'Haptic Alarm' }],
-                optionalServices: ['0000180a-0000-1000-8000-00805f9b34fb']
+                optionalServices: [ALARM_SERVICE_UUID]
             });
             
+            console.log('Device found:', device.name, device.id);
+            
+            console.log('Connecting to GATT server...');
             const server = await device.gatt.connect();
+            setDevice(device);
+            
+            console.log('Getting service...');
+            const service = await server.getPrimaryService(ALARM_SERVICE_UUID);
+            console.log('Service obtained:', service.uuid);
+            
+            console.log('Getting characteristics...');
+            console.log('Looking for command characteristic:', COMMAND_CHAR_UUID);
+            console.log('Looking for status characteristic:', ALARM_CHAR_UUID);
+            
+            const commandChar = await service.getCharacteristic(COMMAND_CHAR_UUID);
+            const statusChar = await service.getCharacteristic(ALARM_CHAR_UUID);
+            
+            console.log('Command characteristic found:', commandChar.uuid);
+            console.log('Status characteristic found:', statusChar.uuid);
+            console.log('Status characteristic properties:', statusChar.properties);
+            
+            setCharacteristic(commandChar);
+            setStatusCharacteristic(statusChar);
             setIsConnected(true);
             
-            // Add your BLE communication logic here
-            // You'll need to implement the specific characteristics for your Pico
+            // Set up notifications for status updates
+            try {
+                await statusChar.startNotifications();
+                statusChar.addEventListener('characteristicvaluechanged', handleStatusUpdate);
+                console.log('Status notifications enabled');
+            } catch (error) {
+                console.log('Status notifications not available:', error);
+            }
+            
+            console.log('Connected successfully! Testing initial command...');
+            
+            // Test connection with a simple command first
+            await new Promise(resolve => setTimeout(resolve, 500)); // Wait for connection to stabilize
+            
+            // Send initial alarm time
+            const [hours, minutes] = alarm.time.split(':').map(Number);
+            console.log(`Setting initial alarm time: ${hours}:${minutes}`);
+            await sendCommand(CMD_SET_ALARM, [hours, minutes]);
+            
+            // Test if we can read the current status
+            try {
+                console.log('Reading current status...');
+                const statusValue = await statusChar.readValue();
+                const statusData = new Uint8Array(statusValue.buffer);
+                console.log('Initial status read:', Array.from(statusData));
+                if (statusData.length >= 4) {
+                    const [armed, ringing, hour, minute] = statusData;
+                    console.log('Initial status parsed:', { armed, ringing, hour, minute });
+                    setAlarm(prev => ({
+                        ...prev,
+                        isArmed: armed === 1,
+                        isRinging: ringing === 1,
+                        time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+                    }));
+                }
+            } catch (error) {
+                console.log('Could not read initial status:', error);
+            }
+            
+            // Handle disconnection
+            device.addEventListener('gattserverdisconnected', () => {
+                console.log('Device disconnected');
+                setIsConnected(false);
+                setDevice(null);
+                setCharacteristic(null);
+                setStatusCharacteristic(null);
+            });
             
         } catch (error) {
             console.error('Bluetooth connection failed:', error);
-            alert('Failed to connect to Bluetooth device. Make sure your alarm device is nearby and discoverable.');
+            alert(`Failed to connect: ${error.message}`);
         }
     };
 
-    // Check for alarm time
+    const handleStatusUpdate = (event) => {
+        console.log('Status update received!', event);
+        const data = new Uint8Array(event.target.value.buffer);
+        console.log('Status data:', Array.from(data), 'Length:', data.length);
+        
+        if (data.length >= 4) {
+            const [armed, ringing, hour, minute] = data;
+            console.log('Status update parsed:', { armed, ringing, hour, minute });
+            
+            setAlarm(prev => ({
+                ...prev,
+                isArmed: armed === 1,
+                isRinging: ringing === 1,
+                time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+            }));
+        } else {
+            console.log('Status data too short:', data.length);
+        }
+    };
+
+    const disconnectBluetooth = () => {
+        if (device && device.gatt.connected) {
+            device.gatt.disconnect();
+        }
+    };
+
+    // Check for alarm time (fallback for web-only mode)
     useEffect(() => {
+        if (isConnected) return; // Skip local alarm check if connected to device
+        
         const checkAlarm = () => {
             const now = new Date();
             const currentTime = now.getHours().toString().padStart(2, '0') + ':' + 
@@ -67,95 +223,207 @@ function Alarm() {
 
         const interval = setInterval(checkAlarm, 1000);
         return () => clearInterval(interval);
-    }, [alarm.isArmed, alarm.time, alarm.isRinging]);
+    }, [alarm.isArmed, alarm.time, alarm.isRinging, isConnected]);
 
     const getStatusText = () => {
         if (alarm.isRinging) return 'RINGING';
-        if (alarm.isArmed) return 'CONNECTED';
-        return 'DISCONNECTED';
+        if (alarm.isArmed) return isConnected ? 'ARMED & CONNECTED' : 'ARMED (LOCAL)';
+        return isConnected ? 'CONNECTED' : 'DISCONNECTED';
     };
 
     const getStatusClass = () => {
-        if (alarm.isRinging) return 'disconnected';
+        if (alarm.isRinging) return 'ringing';
         if (alarm.isArmed) return 'connected';
-        return 'disconnected';
+        return isConnected ? 'connected' : 'disconnected';
     };
 
-    const getArmButtonText = () => {
-        return alarm.isArmed ? 'DISARM' : 'ARM';
-    };
-
-    const getArmButtonClass = () => {
-        return `arm-button ${alarm.isArmed ? 'armed' : 'disarmed'}`;
-    };
-
-    const getStatusDisplayText = () => {
-        return `Status: ${alarm.isArmed ? 'ARMED' : 'DISABLED'} at ${alarm.time}`;
-    };
-
-    const getStatusDisplayClass = () => {
-        return `status-display ${alarm.isRinging ? 'ringing' : ''}`;
-    };
-
-    const getTestButtonText = () => {
-        return alarm.isRinging ? 'STOP TEST' : 'TEST ALARM';
+    const styles = {
+        alarm: {
+            maxWidth: '400px',
+            margin: '0 auto',
+            padding: '20px',
+            fontFamily: 'Arial, sans-serif',
+            backgroundColor: '#1a1a1a',
+            color: '#fff',
+            borderRadius: '10px',
+            textAlign: 'center'
+        },
+        title: {
+            fontSize: '2em',
+            marginBottom: '20px',
+            color: '#fff'
+        },
+        statusIndicator: {
+            padding: '10px',
+            borderRadius: '5px',
+            fontWeight: 'bold',
+            fontSize: '1.2em',
+            marginBottom: '20px'
+        },
+        connected: {
+            backgroundColor: '#4CAF50',
+            color: 'white'
+        },
+        disconnected: {
+            backgroundColor: '#f44336',
+            color: 'white'
+        },
+        ringing: {
+            backgroundColor: '#ff9800',
+            color: 'white',
+            animation: 'blink 1s infinite'
+        },
+        timeSection: {
+            margin: '20px 0'
+        },
+        timeLabel: {
+            display: 'block',
+            marginBottom: '10px',
+            fontSize: '1.1em'
+        },
+        timeInput: {
+            padding: '10px',
+            fontSize: '1.2em',
+            borderRadius: '5px',
+            border: '1px solid #ccc',
+            backgroundColor: '#333',
+            color: '#fff'
+        },
+        button: {
+            padding: '12px 24px',
+            fontSize: '1em',
+            borderRadius: '5px',
+            border: 'none',
+            cursor: 'pointer',
+            margin: '5px',
+            fontWeight: 'bold'
+        },
+        armButton: {
+            backgroundColor: '#2196F3',
+            color: 'white'
+        },
+        armedButton: {
+            backgroundColor: '#4CAF50',
+            color: 'white'
+        },
+        controlButton: {
+            backgroundColor: '#ff9800',
+            color: 'white'
+        },
+        connectButton: {
+            backgroundColor: '#2196F3',
+            color: 'white',
+            marginBottom: '20px'
+        },
+        disconnectButton: {
+            backgroundColor: '#f44336',
+            color: 'white',
+            marginBottom: '20px'
+        },
+        statusDisplay: {
+            margin: '20px 0',
+            fontSize: '1.1em'
+        },
+        controls: {
+            margin: '20px 0'
+        },
+        note: {
+            marginTop: '30px',
+            padding: '15px',
+            backgroundColor: '#333',
+            borderRadius: '5px',
+            fontSize: '0.9em',
+            color: '#ccc'
+        }
     };
 
     return (
-        <section id="alarm" className="alarm">
-            <h1 className="title">Haptic Alarm</h1>
+        <section style={styles.alarm}>
+            <h1 style={styles.title}>Haptic Alarm</h1>
         
-            <div className={`status-indicator ${getStatusClass()}`}>
+            <div style={{
+                ...styles.statusIndicator,
+                ...styles[getStatusClass()]
+            }}>
                 {getStatusText()}
             </div>
 
-            {!isConnected && (
+            {!isConnected ? (
                 <button 
-                    className="control-button" 
-                    style={{background: '#2196F3', color: 'white', marginBottom: '20px'}}
+                    style={{...styles.button, ...styles.connectButton}}
                     onClick={connectBluetooth}
                 >
                     CONNECT BLUETOOTH
                 </button>
+            ) : (
+                <button 
+                    style={{...styles.button, ...styles.disconnectButton}}
+                    onClick={disconnectBluetooth}
+                >
+                    DISCONNECT
+                </button>
             )}
         
-            <div className="time-section">
-                <div className="time-label">Set Alarm Time</div>
+            <div style={styles.timeSection}>
+                <label style={styles.timeLabel}>Set Alarm Time</label>
                 <input 
                     type="time" 
-                    className="time-input" 
+                    style={styles.timeInput}
                     value={alarm.time}
                     onChange={handleTimeChange}
                 />
             </div>
         
-            <button className={getArmButtonClass()} onClick={toggleArm}>
-                {getArmButtonText()}
+            <button 
+                style={{
+                    ...styles.button,
+                    ...(alarm.isArmed ? styles.armedButton : styles.armButton)
+                }}
+                onClick={toggleArm}
+            >
+                {alarm.isArmed ? 'DISARM' : 'ARM'}
             </button>
         
-            <div className={getStatusDisplayClass()}>
-                {getStatusDisplayText()}
+            <div style={styles.statusDisplay}>
+                Status: {alarm.isArmed ? 'ARMED' : 'DISABLED'} at {alarm.time}
             </div>
             
             {alarm.isRinging && (
-                <div className="controls">
-                    <button className="control-button snooze-button" onClick={snooze}>
+                <div style={styles.controls}>
+                    <button 
+                        style={{...styles.button, ...styles.controlButton}}
+                        onClick={snooze}
+                    >
                         SNOOZE
                     </button>
-                    <button className="control-button stop-button" onClick={stop}>
+                    <button 
+                        style={{...styles.button, ...styles.controlButton}}
+                        onClick={stop}
+                    >
                         STOP
                     </button>
                 </div>
             )}
             
-            <button className="control-button test-button" onClick={testAlarm}>
-                {getTestButtonText()}
+            <button 
+                style={{...styles.button, ...styles.controlButton}}
+                onClick={testAlarm}
+            >
+                {alarm.isRinging ? 'STOP TEST' : 'TEST ALARM'}
             </button>
             
-            <div className="note">
-                <strong>Note:</strong> This is a web version of the haptic alarm app. 
-                For full functionality with Bluetooth connectivity, use the mobile app.
+            <div style={styles.note}>
+                <strong>Note:</strong> Make sure your Pico is running the BLE alarm code and 
+                advertising as "Haptic Alarm". The device must be nearby and discoverable.
+                {isConnected && <><br/><strong>✓ Connected to Haptic Alarm device!</strong></>}
             </div>
+
+            <style jsx>{`
+                @keyframes blink {
+                    0%, 50% { opacity: 1; }
+                    51%, 100% { opacity: 0.3; }
+                }
+            `}</style>
         </section>
     );
 }
