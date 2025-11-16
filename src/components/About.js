@@ -9,12 +9,14 @@ function About() {
             <div className="about-content">
             <div className="about-text">
                 <p>
-                    Hi! I'm Cody, a junior Computer Engineering student at the University of Notre Dame from Aiea, Hawai'i. 
-                    I'm interested in computer architecture, VLSI design, and embedded systems applications.
+                    Hi, I'm Cody! I'm originally from Aiea, Hawaii, and I'm currently a junior studying Computer Engineering at the University of Notre Dame.
+                    I'm fascinated by how software really runs on hardware, and I love digging into the layers of abstraction that make these complex computer systems work.
+                    I'm especially interested in computer architecture, VLSI, and processing-in-memory. Ultimately, I want to build tools that people can rely on in their daily lives.
                 </p>
                 <p>
-                    I also love all things music, playing tennis, hiking, and having fun in the ocean! Lately, I have been really 
-                    enjoying rock climbing and photography and would love to share some of my adventures with you!
+                    I play cello and trombone and love all things music-related. I'm currently listening to a lot of jazz, indie rock, and R&B, but I'm always open to new recommendations!
+                    You can also catch me playing tennis, hiking, or rock climbing with friends in my free time. I recently got a used Sony Alpha 230 and am really enjoying taking
+                    pictures of my travels. Let me share some of my adventures with you!
                 </p>
             </div>
             <div className="about-image">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Alarm() {
     const [alarm, setAlarm] = useState({
-        time: '07:00',
+        time: '08:30',
         isArmed: false,
         isRinging: false
     });
@@ -11,7 +11,7 @@ function Alarm() {
     const [characteristic, setCharacteristic] = useState(null);
     const [statusCharacteristic, setStatusCharacteristic] = useState(null);
 
-    // BLE Service and Characteristic UUIDs - must match the Pico code
+    // BLE Service and Characteristic UUIDs - Nordic UART Service
     const ALARM_SERVICE_UUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
     const COMMAND_CHAR_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";  // RX - write commands here
     const ALARM_CHAR_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";    // TX - read status from here
@@ -23,15 +23,20 @@ function Alarm() {
     const CMD_SNOOZE = 0x04;
     const CMD_STOP = 0x05;
     const CMD_TEST = 0x06;
+    const CMD_SET_TIME = 0x07;  // New command to sync time
 
     const handleTimeChange = (e) => {
         const newTime = e.target.value;
+        console.log(`Time changed to: ${newTime}`);
         setAlarm(prev => ({ ...prev, time: newTime }));
         
         // Send time to Pico if connected
         if (characteristic) {
             const [hours, minutes] = newTime.split(':').map(Number);
+            console.log(`Sending time to Pico: ${hours}:${minutes}`);
             sendCommand(CMD_SET_ALARM, [hours, minutes]);
+        } else {
+            console.log('Not connected - time change local only');
         }
     };
 
@@ -81,11 +86,23 @@ function Alarm() {
     };
 
     const testAlarm = async () => {
+        console.log('Test alarm button clicked');
+        
+        // Don't test if real alarm is ringing
+        if (alarm.isRinging && isConnected) {
+            console.log('Real alarm is ringing - ignoring test button');
+            return;
+        }
+        
         const newRingingState = !alarm.isRinging;
         setAlarm(prev => ({ ...prev, isRinging: newRingingState }));
         
         if (characteristic) {
+            console.log('Sending TEST command via BLE...');
             await sendCommand(CMD_TEST);
+            console.log('TEST command sent');
+        } else {
+            console.log('No BLE characteristic - local test only');
         }
     };
 
@@ -113,58 +130,86 @@ function Alarm() {
             console.log('Service obtained:', service.uuid);
             
             console.log('Getting characteristics...');
-            console.log('Looking for command characteristic:', COMMAND_CHAR_UUID);
-            console.log('Looking for status characteristic:', ALARM_CHAR_UUID);
-            
             const commandChar = await service.getCharacteristic(COMMAND_CHAR_UUID);
             const statusChar = await service.getCharacteristic(ALARM_CHAR_UUID);
             
-            console.log('Command characteristic found:', commandChar.uuid);
-            console.log('Status characteristic found:', statusChar.uuid);
-            console.log('Status characteristic properties:', statusChar.properties);
+            console.log('Command characteristic:', commandChar.uuid);
+            console.log('Status characteristic:', statusChar.uuid);
+            console.log('Command characteristic properties:', commandChar.properties);
             
             setCharacteristic(commandChar);
             setStatusCharacteristic(statusChar);
-            setIsConnected(true);
             
-            // Set up notifications for status updates
+            // Set up notifications for status updates (optional)
             try {
+                console.log('Attempting to start notifications...');
                 await statusChar.startNotifications();
                 statusChar.addEventListener('characteristicvaluechanged', handleStatusUpdate);
-                console.log('Status notifications enabled');
+                console.log('✓ Status notifications enabled');
             } catch (error) {
-                console.log('Status notifications not available:', error);
+                console.log('Status notifications not available (this is OK):', error.message);
             }
             
-            console.log('Connected successfully! Testing initial command...');
+            console.log('Connected successfully! Sending time sync...');
             
-            // Test connection with a simple command first
-            await new Promise(resolve => setTimeout(resolve, 500)); // Wait for connection to stabilize
+            // Wait for React state to update and connection to stabilize
+            await new Promise(resolve => setTimeout(resolve, 100));
             
-            // Send initial alarm time
-            const [hours, minutes] = alarm.time.split(':').map(Number);
-            console.log(`Setting initial alarm time: ${hours}:${minutes}`);
-            await sendCommand(CMD_SET_ALARM, [hours, minutes]);
+            // Send current time to sync the Pico's RTC (including seconds for better accuracy)
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;  // JavaScript months are 0-indexed
+            const day = now.getDate();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
             
-            // Test if we can read the current status
+            console.log(`📅 Auto-syncing time: ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+            
+            const timeData = [
+                year & 0xFF,        // Year low byte
+                (year >> 8) & 0xFF, // Year high byte
+                month,
+                day,
+                hours,
+                minutes,
+                seconds             // Add seconds for better accuracy
+            ];
+            
+            console.log(`Time command data:`, timeData);
+            
+            // Use commandChar directly instead of waiting for state update
             try {
-                console.log('Reading current status...');
-                const statusValue = await statusChar.readValue();
-                const statusData = new Uint8Array(statusValue.buffer);
-                console.log('Initial status read:', Array.from(statusData));
-                if (statusData.length >= 4) {
-                    const [armed, ringing, hour, minute] = statusData;
-                    console.log('Initial status parsed:', { armed, ringing, hour, minute });
-                    setAlarm(prev => ({
-                        ...prev,
-                        isArmed: armed === 1,
-                        isRinging: ringing === 1,
-                        time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
-                    }));
-                }
+                console.log('About to write time sync command...');
+                const commandData = new Uint8Array([CMD_SET_TIME, ...timeData]);
+                console.log('Command bytes to send:', Array.from(commandData));
+                await commandChar.writeValue(commandData);
+                console.log('✓ Time automatically synced - command sent');
             } catch (error) {
-                console.log('Could not read initial status:', error);
+                console.error('❌ Failed to sync time:', error);
+                alert('Failed to sync time: ' + error.message);
             }
+            
+            // Wait for time to sync
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Send initial alarm time (also use commandChar directly)
+            const [alarmHours, alarmMinutes] = alarm.time.split(':').map(Number);
+            console.log(`Setting initial alarm time: ${alarmHours}:${alarmMinutes}`);
+            
+            try {
+                console.log('About to write alarm time command...');
+                const alarmData = new Uint8Array([CMD_SET_ALARM, alarmHours, alarmMinutes]);
+                console.log('Alarm command bytes to send:', Array.from(alarmData));
+                await commandChar.writeValue(alarmData);    
+                console.log('✓ Initial alarm time set - command sent');
+            } catch (error) {
+                console.error('❌ Failed to set alarm time:', error);
+                alert('Failed to set alarm time: ' + error.message);
+            }
+            
+            // Mark as connected
+            setIsConnected(true);
             
             // Handle disconnection
             device.addEventListener('gattserverdisconnected', () => {
@@ -182,13 +227,10 @@ function Alarm() {
     };
 
     const handleStatusUpdate = (event) => {
-        console.log('Status update received!', event);
         const data = new Uint8Array(event.target.value.buffer);
-        console.log('Status data:', Array.from(data), 'Length:', data.length);
-        
         if (data.length >= 4) {
             const [armed, ringing, hour, minute] = data;
-            console.log('Status update parsed:', { armed, ringing, hour, minute });
+            console.log('Status update:', { armed, ringing, hour, minute });
             
             setAlarm(prev => ({
                 ...prev,
@@ -196,8 +238,6 @@ function Alarm() {
                 isRinging: ringing === 1,
                 time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
             }));
-        } else {
-            console.log('Status data too short:', data.length);
         }
     };
 
@@ -418,7 +458,7 @@ function Alarm() {
                 {isConnected && <><br/><strong>✓ Connected to Haptic Alarm device!</strong></>}
             </div>
 
-            <style jsx>{`
+            <style>{`
                 @keyframes blink {
                     0%, 50% { opacity: 1; }
                     51%, 100% { opacity: 0.3; }
