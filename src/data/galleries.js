@@ -1,47 +1,52 @@
 export const galleries = {
-  tokyo: {
-    name: 'Tokyo',
-    description: 'Spring 2024 trip to Japan',
+  home: {
+    name: 'Home',
+    description: 'Sunsets from Oahu',
     photos: [
       { 
         id: 1, 
-        url: '/photos/tokyo/photo1.jpg', 
-        alt: 'Tokyo street scene',
-        caption: 'Shibuya crossing at sunset'
+        url: '/photos/oahu/firecracker.JPG', 
+        alt: 'Firecracker',
+        caption: 'Firecracker flower, I\'m not sure what the actual name is.'
       },
       { 
         id: 2, 
-        url: '/photos/tokyo/photo2.jpg', 
-        alt: 'Tokyo temple',
-        caption: 'Senso-ji Temple'
+        url: '/photos/oahu/papaya.JPG', 
+        alt: 'Papaya',
+        caption: 'Papaya tree is too tall.'
+      },
+      { 
+        id: 3, 
+        url: '/photos/oahu/pearlharbor_1.JPG', 
+        alt: 'Pearl Harbor',
+        caption: 'Red sky above Pearl Harbor.'
+      },
+      { 
+        id: 4, 
+        url: '/photos/oahu/pearlharbor_2.JPG', 
+        alt: 'Pearl Harbor 2',
+        caption: 'Purple sky above Pearl Harbor on a different day.'
+      },
+      { 
+        id: 5, 
+        url: '/photos/oahu/pinch.JPG', 
+        alt: 'Pinch',
+        caption: 'My brother tries to capture the sun.'
       }
-      // Add more photos...
+    ]
+  },
+  lyon: {
+    name: 'Lyon',
+    description: 'Summer NSF research program in Lyon, France',
+    photos: [
+      // Add photos when available in /photos/Lyon/
     ]
   },
   campus: {
-    name: 'Campus Life',
-    description: 'Life at university',
+    name: 'London',
+    description: 'Spring 2026 abroad in London',
     photos: [
-      { 
-        id: 1, 
-        url: '/photos/campus/photo1.jpg', 
-        alt: 'Campus building',
-        caption: 'Engineering building'
-      }
-      // Add more photos...
-    ]
-  },
-  nature: {
-    name: 'Nature',
-    description: 'Outdoor adventures',
-    photos: [
-      { 
-        id: 1, 
-        url: '/photos/nature/photo1.jpg', 
-        alt: 'Mountain landscape',
-        caption: 'Hiking trail'
-      }
-      // Add more photos...
+      // Add photos when available in /photos/Campus/
     ]
   }
 }

@@ -5,7 +5,7 @@ export const projects = [
     description: 'Web-connected alarm clock with physical hardware integration. Built with Python backend and React frontend, featuring real-time WebSocket communication.',
     tech: ['React', 'Python', 'Raspberry Pi', 'WebSockets', 'Flask'],
     link: 'alarm-clock',
-    github: 'https://github.com/codychun/alarm-clock'
+    github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
   },
   {
     id: 2,
