@@ -4,7 +4,7 @@ import { galleries } from '../../data/galleries'
 import './PhotographyPage.css'
 
 function PhotographyPage() {
-  const [selectedGallery, setSelectedGallery] = useState('tokyo')
+  const [selectedGallery, setSelectedGallery] = useState('home')
   const currentGallery = galleries[selectedGallery]
   
   return (

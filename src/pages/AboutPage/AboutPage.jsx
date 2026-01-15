@@ -8,13 +8,15 @@ function AboutPage() {
       <div className="about-content">
         <section>
           <p>
-            I'm a junior at the University of Notre Dame studying Computer Engineering. 
-            I'm passionate about the intersection of hardware and software, 
-            particularly in digital design and verification.
+            I'm a junior at the University of Notre Dame studying Computer Engineering and Real Estate. 
+            I'm fascinated by the intersection of hardware and software, particularly in optimizing performance 
+            and efficiency in digital ASIC design.
           </p>
           
           <p>
-            When I'm not coding, you'll find me behind my Sony Alpha 230 capturing ...
+            I aspire to travel the world, capturing interesting moments and forgotten places with my Sony A230.
+            My favorite urban nooks so far have been random parks, alleys, and jazz clubs. I especially like 
+            getting out of the city to the great mountains and oceans of the world. I also like to play tennis and music.
           </p>
         </section>
         
@@ -36,15 +38,15 @@ function AboutPage() {
           <div className="skills-grid">
             <div>
               <h3>Languages</h3>
-              <p>C, Python, SystemVerilog, JavaScript, Java</p>
+              <p>C, Python, SystemVerilog, RISC-V Assembly, JavaScript, Java, Bash</p>
             </div>
             <div>
               <h3>Technologies</h3>
-              <p>React, Node.js, Raspberry Pi, Git, Linux</p>
+              <p>Git, Linux (Ubuntu), Make/CMake, React, Node.js</p>
             </div>
             <div>
               <h3>Tools</h3>
-              <p>Cadence, VS Code, Arduino, KiCad, Figma</p>
+              <p>Cadence Virtuoso, Spectre, Innovus, Genus, Modus, KiCad, VS Code, Arduino, Raspberry Pi, Figma</p>
             </div>
           </div>
         </section>

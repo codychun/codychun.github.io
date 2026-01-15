@@ -5,10 +5,10 @@ function HomePage() {
     <div className="home-page">
       <h1>CODY CHUN</h1>
       <p className='subtitle'>
-        Computer Engieering Student | Photographer
+        Computer Engineering Student
       </p>
       <p className='description'>
-        Junior at the University of Notre Dame, passionate about ...
+        Junior at the University of Notre Dame, passionate about technology and business.
       </p>
     </div>
   )

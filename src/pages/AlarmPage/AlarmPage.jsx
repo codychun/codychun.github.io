@@ -350,7 +350,7 @@ function AlarmPage() {
             <div className="alarm-note">
                 <strong>Note:</strong> Make sure your Pico is running the BLE alarm code and 
                 advertising as "Haptic Alarm". The device must be nearby and discoverable.
-                {isConnected && <><br/><strong>✓ Connected to Haptic Alarm device!</strong></>}
+                {isConnected && <><br/><strong>Connected to Haptic Alarm device!</strong></>}
             </div>
         </section>
     );

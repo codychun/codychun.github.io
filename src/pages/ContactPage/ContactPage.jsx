@@ -12,8 +12,7 @@ function ContactPage() {
       
       <div className="contact-links">
         <a href="mailto:[email protected]" className="contact-link">
-          <span className="icon">📧</span>
-          <span>[cchun4@nd.edu]</span>
+          <span>cchun4@nd.edu</span>
         </a>
         <a 
           href="https://www.linkedin.com/in/cody-chun/"
@@ -21,8 +20,7 @@ function ContactPage() {
           rel="noopener noreferrer"
           className="contact-link"
         >
-          <span className="icon">💼</span>
-          <span>LinkedIn</span>
+          <span>linkedin.com/in/cody-chun</span>
         </a>
         <a 
           href="https://github.com/codychun"
@@ -30,8 +28,7 @@ function ContactPage() {
           rel="noopener noreferrer"
           className="contact-link"
         >
-          <span className="icon">💻</span>
-          <span>GitHub</span>
+          <span>github.com/codychun</span>
         </a>
       </div>
     </div>
