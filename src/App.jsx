@@ -7,6 +7,7 @@ import PhotographyPage from './pages/PhotographyPage/PhotographyPage'
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage'
 import AboutPage from './pages/AboutPage/AboutPage'
 import ContactPage from './pages/ContactPage/ContactPage'
+import AlarmPage from './pages/AlarmPage/AlarmPage'
 import Footer from './components/Footer/Footer'
 import './App.css'
 
@@ -20,9 +21,10 @@ function App() {
       <main className="main-content">
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'photography' && <PhotographyPage />}
-        {currentPage === 'projects' && <ProjectsPage />}
+        {currentPage === 'projects' && <ProjectsPage setCurrentPage={setCurrentPage}/>}
         {currentPage === 'about' && <AboutPage />}
         {currentPage === 'contact' && <ContactPage />}
+        {currentPage === 'alarm-clock' && <AlarmPage />}
       </main>
 
       <Footer />

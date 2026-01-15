@@ -1,7 +1,7 @@
 import { projects } from '../../data/projects'
 import './ProjectsPage.css'
 
-function ProjectsPage() {
+function ProjectsPage({ setCurrentPage }) {
   return (
     <div className="projects-page">
       <h1>Projects</h1>
@@ -24,9 +24,12 @@ function ProjectsPage() {
             {/* Links */}
             <div className="project-links">
               {project.link && (
-                <a href={project.link} className="project-link">
+                <button 
+                  onClick={() => setCurrentPage(project.link)}  // Navigate!
+                  className="project-link"
+                >
                   View Project →
-                </a>
+                </button>
               )}
               {project.github && (
                 <a 
