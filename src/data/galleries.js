@@ -48,9 +48,9 @@ export const galleries = {
     photos: [
       {
         id: 1,
-        url: '/photos/london/nelson_column.JPG',
-        alt: 'Nelson\'s Column',
-        caption: 'Nelson\'s Column in Trafalgar Square on the way to class.'
+        url: '/photos/london/evan_cathedral.JPG',
+        alt: 'Evan and Southwark Cathedral',
+        caption: 'Evan and Southwark Cathedral on the Notre Dame Big Bus Tour.'
       },
       {
         id: 2,
@@ -66,39 +66,39 @@ export const galleries = {
       },
       {
         id: 4,
-        url: '/photos/london/evan_cathedral.JPG',
-        alt: 'Evan and Southwark Cathedral',
-        caption: 'Evan and Southwark Cathedral on the Notre Dame Big Bus Tour.'
+        url: '/photos/london/george4.JPG',
+        alt: 'George IV Equestrian',
+        caption: 'George IV Equestrian statue in Trafalgar Square.'
       },
       {
         id: 5,
-        url: '/photos/london/figaro.JPG',
-        alt: 'Pink Nissan Figaro',
-        caption: 'Pink car parked on the street. Identified a Nissan Figaro by Landon.'
+        url: '/photos/london/nelson_column.JPG',
+        alt: 'Nelson\'s Column',
+        caption: 'Nelson\'s Column in Trafalgar Square on the way to class.'
       },
       {
         id: 6,
+        url: '/photos/london/trafalgar_crowd.JPG',
+        alt: 'Trafalgar Crowd',
+        caption: 'Crowded Trafalgar Square in front of National Gallery.'
+      },
+      {
+        id: 7,
         url: '/photos/london/evan_radios.JPG',
         alt: 'Evan and Radios',
         caption: 'Evan and radios in the Tate Modern.'
       },
       {
-        id: 7,
+        id: 8,
         url: '/photos/london/radios.JPG',
         alt: 'Radios',
         caption: 'Tower of radios in the Tate Modern.'
       },
       {
-        id: 8,
+        id: 9,
         url: '/photos/london/yellow_stairs.JPG',
         alt: 'Yellow Stairs',
         caption: 'Yellow stairs lead where?'
-      },
-      {
-        id: 9,
-        url: '/photos/london/trafalgar_crowd.JPG',
-        alt: 'Trafalgar Crowd',
-        caption: 'Crowded Trafalgar Square in front of National Gallery.'
       },
       {
         id: 10,
@@ -108,10 +108,10 @@ export const galleries = {
       },
       {
         id: 11,
-        url: '/photos/london/george4.JPG',
-        alt: 'George IV Equestrian',
-        caption: 'George IV Equestrian statue in Trafalgar Square.'
-      }
+        url: '/photos/london/figaro.JPG',
+        alt: 'Pink Nissan Figaro',
+        caption: 'Pink car parked on the street. Identified a Nissan Figaro by Landon.'
+      },
     ]
   }
 }
