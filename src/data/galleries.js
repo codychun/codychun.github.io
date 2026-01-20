@@ -37,7 +37,7 @@ export const galleries = {
   },
   lyon: {
     name: 'Lyon',
-    description: 'Summer NSF research program in Lyon, France',
+    description: 'NSF summer research program in Lyon, France',
     photos: [
       // Add photos when available in /photos/Lyon/
     ]
