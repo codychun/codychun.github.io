@@ -42,7 +42,7 @@ export const galleries = {
       // Add photos when available in /photos/Lyon/
     ]
   },
-  campus: {
+  london: {
     name: 'London',
     description: 'Spring 2026 abroad in London, UK',
     photos: [
@@ -113,5 +113,122 @@ export const galleries = {
         caption: 'Pink car parked on the street. Identified a Nissan Figaro by Landon.'
       },
     ]
+  },
+  leeds: {
+    name: 'Leed\'s Castle',
+    description: 'Class trip to Leed\'s Castle',
+    photos: [
+      {
+        id: 1,
+        url: '/photos/leeds/castle.JPG',
+        alt: 'Leed\'s Castle Side View',
+        caption: 'Leed\'s Castle was home to six English queens and King Henry VIII.'
+      },
+      {
+        id: 2,
+        url: '/photos/leeds/entrance.JPG',
+        alt: 'Leed\'s Castle Entrance',
+        caption: 'Going over the moat. Evan and Pedro led the way.'
+      },
+      {
+        id: 3,
+        url: '/photos/leeds/cabin.JPG',
+        alt: 'Cabin',
+        caption: 'I thought this cabin across the water in front of the castle was cool.'
+      },
+      {
+        id: 4,
+        url: '/photos/leeds/nook.JPG',
+        alt: 'Leed\'s Castle Room',
+        caption: 'A room inside the castle. It is said to be the loveliest in the world.'
+      },
+      {
+        id: 5,
+        url: '/photos/leeds/mirror.JPG',
+        alt: 'Mirror',
+        caption: 'There are many vintage items throughout the rooms, including some designer brands. Many birds, too.'
+      },
+      {
+        id: 6,
+        url: '/photos/leeds/stroll.JPG',
+        alt: 'Stroll Through Gardens',
+        caption: 'Stroll through the gardens on the castle grounds.'
+      },
+      {
+        id: 7,
+        url: '/photos/leeds/willow.JPG',
+        alt: 'Willow Tree',
+        caption: 'Willow tree on the pond.'
+      },
+      {
+        id: 8,
+        url: '/photos/leeds/maze.JPG',
+        alt: 'Maze',
+        caption: 'We couldn\'t find the crypt at the end. Some tried to mislead us.'
+      },
+      {
+        id: 9,
+        url: '/photos/leeds/hill.JPG',
+        alt: 'Segways on the Hill',
+        caption: 'People riding segways on the hill. We got lost somewhere on the acreage on the way back.'
+      }
+    ]
+  },
+  canterbury: {
+    name: 'Canterbury',
+    description: 'Class trip to Canterbury',
+    photos: [
+      {
+        id: 1,
+        url: '/photos/canterbury/front.JPG',
+        alt: 'Canterbury Cathdral Front',
+        caption: 'Entering Canterbury Cathedral grounds through the arch.'
+      },
+      {
+        id: 2,
+        url: '/photos/canterbury/cathedral.JPG',
+        alt: 'Canterbury Cathedral Landscape',
+        caption: 'Canterbury Cathedral is the seat of the Archbishop of Canterbury. It is the head of the Anglican Church of England.'
+      },
+      {
+        id: 3,
+        url: '/photos/canterbury/worm.JPG',
+        alt: 'Cabin',
+        caption: 'Entering Canterbury Cathedral. It was established in 597 and contains many old artifacts.'
+      },
+      {
+        id: 4,
+        url: '/photos/canterbury/altar.JPG',
+        alt: 'Cathedral Altar',
+        caption: 'Inside the Cathedral, facing the altar from the bishop\'s seats. The low lighting was beautiful but I couldn\'t keep my hand still.'
+      },
+      {
+        id: 5,
+        url: '/photos/canterbury/houses.JPG',
+        alt: 'Street Houses',
+        caption: 'These buildings remind me of German or Swiss architecture. I like the colors.'
+      },
+      {
+        id: 6,
+        url: '/photos/canterbury/library.JPG',
+        alt: 'Public Library',
+        caption: 'Intricate wood and glass detail on the library.'
+      }
+    ]
+  },
+  stonehenge: {
+    name: 'Stonehenge',
+    description: 'Class trip to Stonehenge',
+    photos: []
+  },
+  bath: {
+    name: 'Roman Bath',
+    description: 'Class trip to Bath',
+    photos: []
+  },
+  oxford: {
+    name: 'Oxforrd',
+    description: 'Day trip to Oxford',
+    photos: []
   }
 }
