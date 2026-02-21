@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation/Navigation'
 import HomePage from './pages/HomePage/HomePage'
 import PhotographyPage from './pages/PhotographyPage/PhotographyPage'
@@ -12,19 +10,19 @@ import Footer from './components/Footer/Footer'
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-
   return (
     <div className="app">
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Navigation />
 
       <main className="main-content">
-        {currentPage === 'home' && <HomePage />}
-        {currentPage === 'photography' && <PhotographyPage />}
-        {currentPage === 'projects' && <ProjectsPage setCurrentPage={setCurrentPage}/>}
-        {currentPage === 'about' && <AboutPage />}
-        {currentPage === 'contact' && <ContactPage />}
-        {currentPage === 'alarm-clock' && <AlarmPage />}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/photography" element={<PhotographyPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/alarm-clock" element={<AlarmPage />} />
+        </Routes>
       </main>
 
       <Footer />

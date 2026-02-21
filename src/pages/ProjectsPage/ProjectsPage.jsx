@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import { projects } from '../../data/projects'
 import './ProjectsPage.css'
 
-function ProjectsPage({ setCurrentPage }) {
+function ProjectsPage() {
+  const navigate = useNavigate()
+
   return (
     <div className="projects-page">
       <h1>Projects</h1>
@@ -25,7 +28,7 @@ function ProjectsPage({ setCurrentPage }) {
             <div className="project-links">
               {project.link && (
                 <button 
-                  onClick={() => setCurrentPage(project.link)}  // Navigate!
+                  onClick={() => navigate(project.link)}  // Navigate!
                   className="project-link"
                 >
                   View Project →

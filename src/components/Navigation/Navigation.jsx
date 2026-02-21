@@ -1,30 +1,32 @@
+import { Link, useLocation } from 'react-router-dom'
 import './Navigation.css'
 
-function Navigation({ currentPage, setCurrentPage}) {
+function Navigation() {
+  const location = useLocation()
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'photography', label: 'Photography'},
-    { id: 'projects', label: 'Projects' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'home', path: '/', label: 'Home' },
+    { id: 'photography', path: '/photography', label: 'Photography'},
+    { id: 'projects', path: '/projects', label: 'Projects' },
+    { id: 'about', path: '/about', label: 'About' },
+    { id: 'contact', path: '/contact', label: 'Contact' }
   ]
 
   return (
     <nav className='navigation'>
-      <button 
-        onClick={() => setCurrentPage('home')}
+      <Link 
+        to="/"
         className='logo' > CODY CHUN
-      </button>
+      </Link>
 
       <div className='nav-links'>
         {navItems.map(item => (
-          <button 
+          <Link 
             key={item.id}
-            onClick={() => setCurrentPage(item.id)}
-            className={`nav-link ${currentPage === item.id ? 'active' : ''}`}
+            to={item.path}
+            className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
           > 
             {item.label}
-          </button>
+          </Link>
         ))}
       </div>
     </nav>

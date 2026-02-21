@@ -19,6 +19,7 @@
   cursor: pointer;
   transition: color 0.2s;
   color: #1a1a1a;
+  text-decoration: none;
 }
 
 .logo:hover {
@@ -41,6 +42,7 @@
   padding-bottom: 0.25rem;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
+  text-decoration: none;
 }
 
 .nav-link:hover {

@@ -4,7 +4,7 @@ export const projects = [
     title: 'Raspberry Pi Alarm Clock',
     description: 'Web-connected haptic alarm clock with physical hardware integration. Built with Python backend and React frontend, featuring real-time Bluetooth Low Energy communication. Wake up silently.',
     tech: ['React', 'Python', 'Raspberry Pi', 'BLE', 'Soldering', 'Schematic Design'],
-    link: 'alarm-clock',
+    link: '/alarm-clock',
     github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
   },
   {
