@@ -462,13 +462,13 @@ export const galleries = {
       },
       {  
         id: 10,
-        url: '/photos/thessaloniki/cat_1.JPG',
+        url: '/photos/thessaloniki/cat_1.jpg',
         alt: 'Cat 1',
         caption: 'Greek cat at Heptapygrion.'
       },
       {  
         id: 11,
-        url: '/photos/thessaloniki/cat_@.JPG',
+        url: '/photos/thessaloniki/cat_2.JPG',
         alt: 'Cat 2',
         caption: 'Greek cat in alley of Ano Poli.'
       },
