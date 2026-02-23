@@ -403,7 +403,7 @@ export const galleries = {
     ]
   },
   thessaloniki: {
-    name: 'Thessaloniki, Greece',
+    name: 'Thessaloniki',
     description: 'Weekend in Greece with the boys',
     photos: [
       {
@@ -513,6 +513,66 @@ export const galleries = {
         url: '/photos/thessaloniki/sunset.JPG',
         alt: 'Sunset on the Sea',
         caption: 'Sunset on the sea before getting asked if we know BTS, and getting some fire crepes and loukoumades.'
+      }
+    ]
+  },
+  seven_sisters:{
+    name: 'Seven Sisters',
+    description: 'Hiking the chalk cliffs of Seven Sisters on the English Channel.',
+    photos: [
+      {
+        id: 1,
+        url: '/photos/seven_sisters/cliffs_1.JPG',
+        alt: 'Cliffs Start',
+        caption: 'Seven Sisters in South Downs National Park. The chalk cliffs are stark against the gray ocean and green grass.'
+      },
+      {
+        id: 2,
+        url: '/photos/seven_sisters/cliffs_2.JPG',
+        alt: 'Cliffs End',
+        caption: 'Cliffs from the visitor center near East Dean, going up to the lighthouse.'
+      },
+      {
+        id: 3,
+        url: '/photos/seven_sisters/cliffs_3.JPG',
+        alt: 'Cliffs End',
+        caption: 'We got drenched from the rain and wind pelting us from the ocean.'
+      },
+      {
+        id: 4,
+        url: '/photos/seven_sisters/rolling.JPG',
+        alt: 'Rolling Hills',
+        caption: 'There are seven hills that we climbed up and down along the cliffs. That\'s where the name comes from!'
+      },
+      {
+        id: 5,
+        url: '/photos/seven_sisters/visitor.JPG',
+        alt: 'Visitor Center',
+        caption: 'Visitor center near East Dean. Took the bus to Cuckmere river, and walked back 30 minutes from here to East Dean bus.'
+      },
+      {
+        id: 6,
+        url: '/photos/seven_sisters/lighthouse_1.JPG',
+        alt: 'Lighthouse Boys',
+        caption: 'The boys: Michael Morales, JR, Henry, and Dao Wei (not pictured).'
+      },
+      {
+        id: 7,
+        url: '/photos/seven_sisters/lighthouse_2.JPG',
+        alt: 'Lighthouse Hikers',
+        caption: 'The wind was so strong. We all got soaked and had to walk back wet and cold.'
+      },
+      {
+        id: 8,
+        url: '/photos/seven_sisters/sheep_1.JPG',
+        alt: 'Sheep On Cliff',
+        caption: 'Sheep got out of the fence. They were chilling near the cliff.'
+      },
+      {
+        id: 9,
+        url: '/photos/seven_sisters/sheep_2.JPG',
+        alt: 'Sheep on Cliff',
+        caption: 'Oh, to be a sheep, munching grass.'
       }
     ]
   }
