@@ -37,14 +37,14 @@ export const galleries = {
   },
   lyon: {
     name: 'Lyon',
-    description: 'NSF summer research program in Lyon, France',
+    description: 'NSF Summer Research Program in Lyon, France',
     photos: [
       // Add photos when available in /photos/Lyon/
     ]
   },
   london: {
     name: 'London',
-    description: 'Spring 2026 abroad in London, UK',
+    description: 'Study Abroad Spring 2026 in London',
     photos: [
       {
         id: 1,
@@ -140,7 +140,7 @@ export const galleries = {
   },
   leeds: {
     name: 'Leed\'s Castle',
-    description: 'Class trip to Leed\'s Castle',
+    description: '1.17.26 | Class trip to Leed\'s Castle',
     photos: [
       {
         id: 1,
@@ -200,7 +200,7 @@ export const galleries = {
   },
   canterbury: {
     name: 'Canterbury',
-    description: 'Class trip to Canterbury',
+    description: '1.17.26 | Class trip to Canterbury',
     photos: [
       {
         id: 1,
@@ -242,7 +242,7 @@ export const galleries = {
   },
   stonehenge: {
     name: 'Stonehenge',
-    description: 'Class trip to Stonehenge',
+    description: '1.30.26 | Class trip to Stonehenge',
     photos: [
       {
         id: 1,
@@ -283,8 +283,8 @@ export const galleries = {
     ]
   },
   bath: {
-    name: 'Roman Bath',
-    description: 'Class trip to Bath',
+    name: 'Bath',
+    description: '1.30.26 | Class trip to Roman Bath',
     photos: [
       {
         id: 1,
@@ -326,7 +326,7 @@ export const galleries = {
   },
   oxford: {
     name: 'Oxford',
-    description: 'Day trip to Oxford',
+    description: '2.1.26 | Day trip to Oxford',
     photos: [
       {
         id: 1,
@@ -404,7 +404,7 @@ export const galleries = {
   },
   thessaloniki: {
     name: 'Thessaloniki',
-    description: 'Weekend in Greece with the boys',
+    description: '2.6 - 2.8.26 | Weekend in Greece with the boys',
     photos: [
       {
         id: 1,
@@ -518,7 +518,7 @@ export const galleries = {
   },
   seven_sisters:{
     name: 'Seven Sisters',
-    description: 'Hiking the chalk cliffs of Seven Sisters on the English Channel.',
+    description: '2.20.26 | Hiking the chalk cliffs of Seven Sisters on the English Channel.',
     photos: [
       {
         id: 1,
@@ -574,6 +574,41 @@ export const galleries = {
         alt: 'Sheep on Cliff',
         caption: 'Oh, to be a sheep, munching grass.'
       }
+    ]
+  },
+  istanbul:{
+    name: 'Istanbul',
+    descrition: '2.26 - 3.2.26 | ',
+    photos: [
+      {}
+    ]
+  },
+  madeira:{
+    name: 'Madeira',
+    descrition: '3.5 - 3.10.26 | ',
+    photos: [
+      {}
+    ]
+  },
+  rome:{
+    name: 'Rome',
+    descrition: '3.10 - 3.11.26 | ',
+    photos: [
+      {}
+    ]
+  },
+  pompeii:{
+    name: 'Pompeii',
+    descrition: '3.12.26 | ',
+    photos: [
+      {}
+    ]
+  },
+  amalfi:{
+    name: 'Amalfi Coast and Salerno',
+    descrition: '3.13 - 3.15.26 | ',
+    photos: [
+      {}
     ]
   }
 }
