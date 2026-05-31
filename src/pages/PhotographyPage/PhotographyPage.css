@@ -1,40 +1,192 @@
-.photography-page h1 {
-  text-align: center;
-  font-size: 3rem;
+.photography-page {
+  margin: 0 -2rem;
+}
+
+.photography-layout {
+  display: flex;
+  align-items: flex-start;
+  min-height: 60vh;
+  position: relative;
+}
+
+.gallery-sidebar-backdrop {
+  display: none;
+}
+
+.gallery-sidebar {
+  position: sticky;
+  top: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border-right: 1px solid #e5e5e5;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.gallery-sidebar.collapsed {
+  width: 3.5rem;
+}
+
+.gallery-sidebar.expanded {
+  width: 14rem;
+}
+
+.gallery-sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #1a1a1a;
+  transition: background 0.2s;
+}
+
+.gallery-sidebar-toggle:hover {
+  background: #eee;
+}
+
+.waffle-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  gap: 3px;
+}
+
+.waffle-icon span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.gallery-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-sidebar.expanded .gallery-nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-nav-title {
+  margin: 0 1rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.gallery-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem 1rem;
+}
+
+.gallery-nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.gallery-nav-item:hover {
+  background: #eee;
+  color: #1a1a1a;
+}
+
+.gallery-nav-item.active {
+  background: #1a1a1a;
+  color: white;
+}
+
+.gallery-main {
+  flex: 1;
+  min-width: 0;
+  padding: 0 2rem;
+}
+
+.gallery-main h1 {
+  font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .page-description {
-  text-align: center;
   color: #666;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.gallery-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
+.gallery-empty {
+  color: #999;
+  font-style: italic;
+  margin-top: 2rem;
 }
 
-.gallery-tab {
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 2rem;
-  background: #f5f5f5;
-  color: #666;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
+.gallery-main .photo-grid {
+  margin-top: 1rem;
 }
 
-.gallery-tab:hover {
-  background: #e5e5e5;
-}
+@media (max-width: 768px) {
+  .photography-page {
+    margin: 0;
+  }
 
-.gallery-tab.active {
-  background: #1a1a1a;
-  color: white;
+  .gallery-sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    border: none;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+  }
+
+  .gallery-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 45;
+    border-right: 1px solid #e5e5e5;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .gallery-sidebar.collapsed {
+    width: 3.5rem;
+    box-shadow: none;
+  }
+
+  .gallery-sidebar.expanded {
+    width: min(14rem, 80vw);
+  }
+
+  .gallery-main {
+    padding: 0 0 0 3.5rem;
+    width: 100%;
+  }
+
+  .gallery-main h1 {
+    font-size: 2rem;
+  }
 }
