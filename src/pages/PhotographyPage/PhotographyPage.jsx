@@ -33,9 +33,7 @@ function PhotographyPage() {
             aria-label={sidebarOpen ? 'Close gallery menu' : 'Open gallery menu'}
             aria-expanded={sidebarOpen}
           >
-            <span className="waffle-icon" aria-hidden="true">
-              <span /><span /><span />
-              <span /><span /><span />
+            <span className="menu-icon" aria-hidden="true">
               <span /><span /><span />
             </span>
           </button>
