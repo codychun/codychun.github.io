@@ -54,19 +54,7 @@ function PhotographyPage() {
           />
         )}
 
-        <aside className={`gallery-sidebar ${sidebarOpen ? 'expanded' : 'collapsed'}`}>
-          <button
-            type="button"
-            className="gallery-sidebar-toggle"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-label={sidebarOpen ? 'Close gallery menu' : 'Open gallery menu'}
-            aria-expanded={sidebarOpen}
-          >
-            <span className="menu-icon" aria-hidden="true">
-              <span /><span /><span />
-            </span>
-          </button>
-
+        <aside className="gallery-sidebar" aria-hidden={!sidebarOpen}>
           <nav className="gallery-nav" aria-label="Photo galleries">
             <p className="gallery-nav-title">Galleries</p>
             <ul className="gallery-nav-list">
@@ -122,15 +110,33 @@ function PhotographyPage() {
           </nav>
         </aside>
 
-        <div className="gallery-main">
-          <h1>{currentGallery.name}</h1>
-          <p className="page-description">{currentGallery.description}</p>
+        <div className="gallery-content">
+          <div className="gallery-header">
+            <button
+              type="button"
+              className="gallery-sidebar-toggle"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label={sidebarOpen ? 'Close gallery menu' : 'Open gallery menu'}
+              aria-expanded={sidebarOpen}
+            >
+              <span className="menu-icon" aria-hidden="true">
+                <span /><span /><span />
+              </span>
+            </button>
 
-          {currentGallery.photos.length > 0 ? (
-            <PhotoGrid photos={currentGallery.photos} />
-          ) : (
-            <p className="gallery-empty">Photos coming soon.</p>
-          )}
+            <div className="gallery-header-text">
+              <h1>{currentGallery.name}</h1>
+              <p className="page-description">{currentGallery.description}</p>
+            </div>
+          </div>
+
+          <div className="gallery-photos">
+            {currentGallery.photos.length > 0 ? (
+              <PhotoGrid photos={currentGallery.photos} />
+            ) : (
+              <p className="gallery-empty">Photos coming soon.</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
