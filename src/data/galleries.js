@@ -612,3 +612,28 @@ export const galleries = {
     ]
   }
 }
+
+export const galleryNav = [
+  { type: 'gallery', id: 'home' },
+  {
+    type: 'folder',
+    id: 'study-abroad',
+    name: 'Study Abroad',
+    galleries: [
+      'london',
+      'leeds',
+      'canterbury',
+      'stonehenge',
+      'bath',
+      'oxford',
+      'seven_sisters',
+      'thessaloniki',
+      'istanbul',
+      'madeira',
+      'rome',
+      'pompeii',
+      'amalfi',
+    ],
+  },
+  { type: 'gallery', id: 'lyon' },
+]

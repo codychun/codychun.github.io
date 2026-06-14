@@ -30,7 +30,7 @@
 }
 
 .gallery-sidebar.expanded {
-  width: 14rem;
+  width: 16rem;
   background: white;
   overflow: hidden;
   box-shadow: 4px 0 16px rgba(0, 0, 0, 0.06);
@@ -118,6 +118,67 @@
   color: white;
 }
 
+.gallery-nav-folder {
+  margin-bottom: 0.25rem;
+}
+
+.gallery-nav-folder-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.gallery-nav-folder-toggle:hover {
+  background: #eee;
+}
+
+.gallery-nav-folder-toggle.has-active {
+  color: #1a1a1a;
+}
+
+.gallery-nav-folder-name {
+  text-align: left;
+}
+
+.gallery-nav-chevron {
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.gallery-nav-chevron.expanded {
+  transform: rotate(45deg);
+}
+
+.gallery-nav-sublist {
+  list-style: none;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0 0 0 0.75rem;
+  border-left: 1px solid #e5e5e5;
+  margin-left: 1.25rem;
+}
+
+.gallery-nav-subitem {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+}
+
 .gallery-main {
   flex: 1;
   min-width: 0;
@@ -172,7 +233,7 @@
     left: 0;
     bottom: 0;
     z-index: 45;
-    width: min(14rem, 80vw);
+    width: min(16rem, 85vw);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
   }
 
