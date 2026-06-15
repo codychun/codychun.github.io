@@ -125,14 +125,39 @@ li + .nav-dropdown-folder {
   padding-top: 0.5rem;
 }
 
-.nav-dropdown-folder-label {
-  display: block;
-  padding: 0.35rem 1.25rem 0.25rem;
-  font-size: 0.7rem;
+.nav-dropdown-folder-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #999;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.nav-dropdown-folder-toggle:hover {
+  background: #f5f5f5;
+}
+
+.nav-dropdown-chevron {
+  flex-shrink: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+  margin-left: 0.75rem;
+}
+
+.nav-dropdown-chevron.expanded {
+  transform: rotate(45deg);
 }
 
 .nav-dropdown-sublist {

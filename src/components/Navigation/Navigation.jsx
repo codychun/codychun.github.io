@@ -1,4 +1,5 @@
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
 import { galleries, galleryNav } from '../../data/galleries'
 import './Navigation.css'
 
@@ -9,7 +10,20 @@ function getGalleryPath(galleryId) {
 function Navigation() {
   const location = useLocation()
   const [searchParams] = useSearchParams()
+  const [expandedFolders, setExpandedFolders] = useState(() => new Set())
   const selectedGallery = searchParams.get('gallery') || 'home'
+
+  const toggleFolder = (folderId) => {
+    setExpandedFolders(prev => {
+      const next = new Set(prev)
+      if (next.has(folderId)) {
+        next.delete(folderId)
+      } else {
+        next.add(folderId)
+      }
+      return next
+    })
+  }
 
   const navItems = [
     { id: 'home', path: '/', label: 'Home' },
@@ -58,19 +72,30 @@ function Navigation() {
 
                 return (
                   <li key={item.id} className="nav-dropdown-folder">
-                    <span className="nav-dropdown-folder-label">{item.name}</span>
-                    <ul className="nav-dropdown-sublist">
-                      {item.galleries.map(galleryId => (
-                        <li key={galleryId}>
-                          <Link
-                            to={getGalleryPath(galleryId)}
-                            className={`nav-dropdown-item nav-dropdown-subitem ${isPhotographyActive && selectedGallery === galleryId ? 'active' : ''}`}
-                          >
-                            {galleries[galleryId].name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <button
+                      type="button"
+                      className={`nav-dropdown-folder-toggle ${item.galleries.includes(selectedGallery) ? 'has-active' : ''}`}
+                      onClick={() => toggleFolder(item.id)}
+                      aria-expanded={expandedFolders.has(item.id)}
+                    >
+                      <span>{item.name}</span>
+                      <span className={`nav-dropdown-chevron ${expandedFolders.has(item.id) ? 'expanded' : ''}`} aria-hidden="true" />
+                    </button>
+
+                    {expandedFolders.has(item.id) && (
+                      <ul className="nav-dropdown-sublist">
+                        {item.galleries.map(galleryId => (
+                          <li key={galleryId}>
+                            <Link
+                              to={getGalleryPath(galleryId)}
+                              className={`nav-dropdown-item nav-dropdown-subitem ${isPhotographyActive && selectedGallery === galleryId ? 'active' : ''}`}
+                            >
+                              {galleries[galleryId].name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 )
               })}
