@@ -11,11 +11,16 @@ function ProjectsPage() {
       
       <div className="projects-grid">
         {projects.map(project => (
+
           <div key={project.id} className="project-card">
             <h2>{project.title}</h2>
-            <p className="project-description">{project.description}</p>
             
-            {/* Tech tags */}
+            <div className="project-image">
+              <img src={project.image} alt={project.title}/>
+            </div>
+
+            <p className="project-description">{project.description}</p>
+
             <div className="tech-tags">
               {project.tech.map(tech => (
                 <span key={tech} className="tech-tag">
@@ -24,16 +29,16 @@ function ProjectsPage() {
               ))}
             </div>
             
-            {/* Links */}
             <div className="project-links">
               {project.link && (
-                <button 
+                <a 
                   onClick={() => navigate(project.link)}  // Navigate!
                   className="project-link"
                 >
-                  View Project →
-                </button>
+                  View Project
+                </a>
               )}
+
               {project.github && (
                 <a 
                   href={project.github}
@@ -41,7 +46,7 @@ function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="project-link github"
                 >
-                  GitHub →
+                  GitHub
                 </a>
               )}
             </div>
