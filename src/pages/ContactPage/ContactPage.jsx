@@ -6,7 +6,7 @@ function ContactPage() {
       <h1>Get In Touch</h1>
       
       <p className="contact-intro">
-        I'm always open to meeting new people and exciting opportunities! Feel free to reach out if you want to chat about anything!
+        I love to talk.<br></br>About careers, travel, tennis, music, food ... anything!<br></br> Feel free to reach out and we can have a nice chat!
       </p>
       
       <div className="contact-links">
