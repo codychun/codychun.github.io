@@ -24,8 +24,6 @@ function App() {
           <Route path="/alarm-clock" element={<AlarmPage />} />
         </Routes>
       </main>
-
-      <Footer />
     </div>
   )
 }
