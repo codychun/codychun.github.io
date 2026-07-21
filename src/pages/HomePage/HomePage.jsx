@@ -1,4 +1,5 @@
 import './HomePage.css'
+import headshot from '../../assets/headshot.jpg'
 
 function HomePage() {
   return (
@@ -6,7 +7,7 @@ function HomePage() {
       <h1>Hi, I'm Cody.</h1>
 
       <div className="headshot">
-        <img src="headshot.jpg" alt="Cody" />
+        <img src={headshot} alt="Cody" />
       </div>
 
       <p className='subtitle'>
