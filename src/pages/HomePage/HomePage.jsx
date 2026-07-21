@@ -6,7 +6,7 @@ function HomePage() {
       <h1>Hi, I'm Cody.</h1>
 
       <div className="headshot">
-        <img src="/projects/headshot.jpg" alt="Cody" />
+        <img src="headshot.jpg" alt="Cody" />
       </div>
 
       <p className='subtitle'>
