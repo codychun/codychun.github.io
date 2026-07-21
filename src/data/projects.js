@@ -1,27 +1,39 @@
 export const projects = [
   {
     id: 1,
+    title: 'CRISPy Chip',
+    description: 'Cody\'s (really) Reduced Istruction Set Processor...yay! Single-cycle RV32I CPU core with 11 instruction ISA for running insertion sort, with support for future expansion.',
+    image: '',
+    tech: ['SystemVerilog', 'RISC-V', 'Icarus Verilog', 'GTKWave', 'Computer Architecture'],
+    link: null,
+    github: 'https://github.com/codychun/crispy_chip'
+  },
+  {
+    id: 2,
     title: '32-bit Hashing ASIC',
-    description: 'Secure hardware accelerator for custom Add-Rotate-XOR (ARX) cryptographic hashing processor. Designed hardware in SystemVerilog and developed test bench with 99% FSM code coverage and 99.47% block coverage. Performed full RTL-GDSII flow, resulting in a successful tapeout under the MUSE Semiconductor Multi-Project Wafer program. Met timing constraints with a positive slack of 0.805ns and total power consumption of 21.21mW.',
-    tech: ['SystemVerilog', 'Cadence Innovus', 'Xcelium', 'SimVision', 'Virtuoso', 'Virtuoso PVS', 'Genus', 'Modus', 'Voltus'],
+    description: 'Hardware accelerator for custom Add-Rotate-XOR (ARX) hash processor. Full RTL-GDSII flow in Cadence EDA Suite on TSMC 180nm, resulting in a successful tapeout under the MUSE Semiconductor Multi-Project Wafer program.',
+    image: '/projects/hash_asic.png',
+    tech: ['SystemVerilog', 'Cadence EDA Suite', 'Verification', 'Tapeout', 'Finite State Machine (FSM)'],
     link: null,
     github: 'https://github.com/codychun/hash_asic'
   },
   {
-    id: 2,
-    title: 'Raspberry Pi Alarm Clock',
-    description: 'Web-connected haptic alarm clock with physical hardware integration. Built with Python backend and React frontend, featuring real-time Bluetooth Low Energy communication. Wake up silently.',
-    tech: ['React', 'Python', 'Raspberry Pi', 'BLE', 'Soldering', 'Schematic Design'],
-    link: '/alarm-clock',
-    github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
-  },
-  {
     id: 3,
-    title: 'Torchlight Retro Arcade Game',
-    description: 'Low visibility dungeon crawler arcade game built in C on the Neo6502 platform. Wrote game engine, designed sprites and tileset, and implemented sound effects from the ground up using C libraries on bare silicon.',
-    tech: ['C', 'Neo6502'],
+    title: 'Torchlight',
+    description: 'Retro arcade game built on Neo6502 (MOS 6502/RP2040 co-processor). Low visibility dungeon crawler arcade game built in bare-metal C, compiled with LLVM-MOS with support for hardware and emulation.',
+    image: '/projects/torchlight.png',
+    tech: ['C', 'Neo6502', 'LLVM-MOS'],
     link: null,
     github: 'https://github.com/codychun/torchlight'
+  },
+  {
+    id: 4,
+    title: 'Raspberry Pi Alarm Clock',
+    description: 'Web-connected haptic alarm clock with physical hardware integration. Built with Python backend and React frontend, featuring real-time Bluetooth Low Energy communication. Wake up silently.',
+    image: '',
+    tech: ['Python', 'Raspberry Pi', 'BLE', 'React', 'Node.js', 'KiCAD'],
+    link: '/alarm-clock',
+    github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
   }
   // Add more projects as you build them!
 ]
