@@ -17,4 +17,9 @@ export default defineConfig({
     }
   ],
   base: '/',
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 })
