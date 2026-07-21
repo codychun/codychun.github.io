@@ -12,7 +12,7 @@
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .about-content p {
