@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: 'CRISPy Chip',
     description: 'Cody\'s (really) Reduced Istruction Set Processor...yay! Single-cycle RV32I CPU core with 11 instruction ISA for running insertion sort, with support for future expansion.',
-    image: '',
+    image: '/projects/crispy.png',
     tech: ['SystemVerilog', 'RISC-V', 'Icarus Verilog', 'GTKWave', 'Computer Architecture'],
     link: null,
     github: 'https://github.com/codychun/crispy-chip'
