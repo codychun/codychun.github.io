@@ -6,7 +6,7 @@ export const projects = [
     image: '',
     tech: ['SystemVerilog', 'RISC-V', 'Icarus Verilog', 'GTKWave', 'Computer Architecture'],
     link: null,
-    github: 'https://github.com/codychun/crispy_chip'
+    github: 'https://github.com/codychun/crispy-chip'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const projects = [
     image: '/projects/hash_asic.png',
     tech: ['SystemVerilog', 'Cadence EDA Suite', 'Verification', 'Tapeout', 'Finite State Machine (FSM)'],
     link: null,
-    github: 'https://github.com/codychun/hash_asic'
+    github: 'https://github.com/codychun/hash-asic'
   },
   {
     id: 3,
