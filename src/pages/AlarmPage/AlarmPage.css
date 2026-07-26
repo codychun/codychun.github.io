@@ -1,183 +1,169 @@
 .alarm-page {
   max-width: 500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
 .alarm-title {
-  font-size: 2.5em;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
   margin-bottom: 2rem;
   color: #1a1a1a;
 }
 
+/* Status indicator — muted, text-driven instead of colored blocks */
 .status-indicator {
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.2em;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
   margin-bottom: 2rem;
+  background: #f5f5f5;
+  color: #666;
   transition: all 0.3s ease;
 }
-
 .status-indicator.connected {
-  background-color: #4CAF50;
-  color: white;
+  background: #f5f5f5;
+  color: #1a1a1a;
 }
-
 .status-indicator.disconnected {
-  background-color: #f44336;
-  color: white;
+  background: #f5f5f5;
+  color: #999;
 }
-
 .status-indicator.ringing {
-  background-color: #ff9800;
-  color: white;
+  background: #f5f5f5;
+  color: #1a1a1a;
   animation: blink 1s infinite;
 }
-
 @keyframes blink {
-  0%, 50% { 
-    opacity: 1; 
-  }
-  51%, 100% { 
-    opacity: 0.3; 
-  }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.4; }
 }
 
 .time-section {
   margin: 2rem 0;
 }
-
 .time-label {
   display: block;
-  margin-bottom: 1rem;
-  font-size: 1.1em;
-  color: #1a1a1a;
-  font-weight: 500;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
 }
-
 .time-input {
-  padding: 0.75rem 1rem;
-  font-size: 1.2em;
-  border-radius: 8px;
-  border: 2px solid #e5e5e5;
-  background-color: #ffffff;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
   color: #1a1a1a;
   width: 100%;
   max-width: 200px;
-  transition: border-color 0.3s ease;
+  text-align: center;
+  transition: border-color 0.2s ease;
 }
-
 .time-input:hover {
-  border-color: #2196F3;
+  border-color: #999;
 }
-
 .time-input:focus {
   outline: none;
-  border-color: #2196F3;
-  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  border-color: #1a1a1a;
 }
 
+/* Buttons — text-driven with underline, matching .social-button / .project-link */
 .alarm-button {
-  padding: 0.75rem 2rem;
-  font-size: 1em;
-  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  border-radius: 0;
   border: none;
+  border-bottom: 1px solid transparent;
+  background: none;
+  color: #333;
   cursor: pointer;
-  margin: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  margin: 0.4rem;
+  transition: border-color 0.2s, color 0.2s;
   font-family: inherit;
 }
-
 .alarm-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #000;
+  border-bottom-color: #333;
+  transform: none;
+  box-shadow: none;
 }
-
 .alarm-button:active {
-  transform: translateY(0);
+  transform: none;
 }
 
 .arm-button {
-  background-color: #2196F3;
-  color: white;
+  color: #1a1a1a;
 }
-
-.arm-button:hover {
-  background-color: #1976D2;
-}
-
 .armed-button {
-  background-color: #4CAF50;
-  color: white;
+  color: #1a1a1a;
+  border-bottom-color: #1a1a1a;
 }
-
-.armed-button:hover {
-  background-color: #388E3C;
-}
-
 .control-button {
-  background-color: #ff9800;
-  color: white;
+  color: #666;
 }
-
 .control-button:hover {
-  background-color: #F57C00;
+  color: #1a1a1a;
 }
 
-.connect-button {
-  background-color: #2196F3;
-  color: white;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  max-width: 300px;
-}
-
-.connect-button:hover {
-  background-color: #1976D2;
-}
-
+.connect-button,
 .disconnect-button {
-  background-color: #f44336;
-  color: white;
-  margin-bottom: 1.5rem;
+  display: block;
   width: 100%;
   max-width: 300px;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  background: none;
 }
-
+.connect-button:hover,
 .disconnect-button:hover {
-  background-color: #D32F2F;
+  background: #1a1a1a;
+  color: #fff;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 .status-display {
   margin: 1.5rem 0;
-  font-size: 1.1em;
-  color: #666666;
+  font-size: 0.95rem;
+  color: #999;
+  font-weight: 300;
 }
 
 .alarm-controls {
   margin: 1.5rem 0;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .alarm-note {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   padding: 1.25rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  font-size: 0.9em;
-  color: #666666;
-  line-height: 1.6;
+  background: none;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 0;
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.8;
   text-align: left;
+  font-weight: 300;
 }
-
 .alarm-note strong {
-  color: #1a1a1a;
+  color: #666;
+  font-weight: 500;
 }
 
 /* Responsive design */
@@ -185,31 +171,25 @@
   .alarm-page {
     padding: 1.5rem;
   }
-
   .alarm-title {
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-
   .status-indicator {
-    font-size: 1em;
-    padding: 0.875rem 1.25rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
   }
-
   .time-input {
     max-width: 100%;
   }
-
   .alarm-button {
     width: 100%;
     max-width: 300px;
   }
-
   .alarm-controls {
     flex-direction: column;
     align-items: center;
   }
-
   .alarm-controls .alarm-button {
     width: 100%;
     max-width: 300px;
