@@ -28,10 +28,19 @@ export const projects = [
   },
   {
     id: 4,
-    title: 'Raspberry Pi Alarm Clock',
-    description: 'Web-connected haptic alarm clock with physical hardware integration. Built with Python backend and React frontend, featuring real-time Bluetooth Low Energy communication. Wake up silently.',
-    image: '',
-    tech: ['Python', 'Raspberry Pi', 'BLE', 'React', 'Node.js', 'KiCAD'],
+    title: 'Haptic Alarm Clock',
+    description: 'Web-connected haptic alarm clock with Raspberry Pi Pico 2W integration. Built with Python backend and React frontend, featuring real-time Bluetooth Low Energy communication. Wake up silently.',
+    image: '/projects/alarm.png',
+    tech: ['Python', 'Raspberry Pi', 'BLE', 'React', 'Node.js'],
+    link: '/alarm-clock',
+    github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
+  },
+  {
+    id: 5,
+    title: 'LoRa GPS Tracker PCB',
+    description: 'Location tracking system to send/receive local GPS coordinates to network via LoRa. 4-Layer PCB designed in KiCad to regulate battery and USB power via 3.3 LDO, and inter-chip communication via UART & SPI. FreeRTOS embedded software built in C running on Raspberry Pi.',
+    image: '/projects/gps_tracker.png',
+    tech: ['Embedded C', 'KiCad', 'FreeRTOS', 'UART', 'SPI', 'Raspberry Pi'],
     link: '/alarm-clock',
     github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
   }
