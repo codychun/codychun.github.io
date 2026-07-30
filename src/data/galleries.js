@@ -11,68 +11,290 @@ export const galleries = {
       },
       { 
         id: 2, 
+        url: '/photos/oahu/pearl.JPG', 
+        alt: 'Pearl Harbor',
+        caption: 'Red sky above Pearl Harbor.'
+      },
+      { 
+        id: 3, 
+        url: '/photos/oahu/pinch.JPG', 
+        alt: 'Pinch',
+        caption: 'My brother tries to capture the sun.'
+      },
+      { 
+        id: 4, 
         url: '/photos/oahu/papaya.JPG', 
         alt: 'Papaya',
         caption: 'Papaya tree is too tall.'
       },
       { 
-        id: 3, 
-        url: '/photos/oahu/pearlharbor_1.JPG', 
-        alt: 'Pearl Harbor',
-        caption: 'Red sky above Pearl Harbor.'
-      },
-      { 
-        id: 4, 
-        url: '/photos/oahu/pearlharbor_2.JPG', 
-        alt: 'Pearl Harbor 2',
-        caption: 'Purple sky above Pearl Harbor on a different day.'
-      },
-      { 
         id: 5, 
-        url: '/photos/oahu/pinch.JPG', 
-        alt: 'Pinch',
-        caption: 'My brother tries to capture the sun.'
+        url: '/photos/oahu/ohia.JPG', 
+        alt: 'Ohia Lehua',
+        caption: '\'Ohi\'a Lehua on the Wa\'ahila Ridge.'
+      },
+      { 
+        id: 6, 
+        url: '/photos/oahu/rainbow.JPG', 
+        alt: 'Rainbow',
+        caption: 'The rainbow will be the sign of that solemn promise.'
+      },
+      { 
+        id: 7, 
+        url: '/photos/oahu/stairway.JPG', 
+        alt: 'Stairway to Heaven',
+        caption: 'The Stairway to Heaven. I didn\'t think we were going to make it.'
+      },
+      { 
+        id: 8, 
+        url: '/photos/oahu/wave.JPG', 
+        alt: 'Wave Crashing',
+        caption: 'Wave crashing on the Ka\'iwi Shoreline.'
+      },
+      { 
+        id: 9, 
+        url: '/photos/oahu/climb.JPG', 
+        alt: 'Rock Climbing',
+        caption: 'Be careful along the edges.'
       }
     ]
   },
   lyon: {
     name: 'Lyon',
-    description: 'NSF Summer Research Program in Lyon, France',
+    description: '5.17 - 7.30.25 | NSF Summer Research Program in Lyon, France',
     photos: [
-      // 
+      { 
+        id: 1, 
+        url: '/photos/lyon/flag.JPG', 
+        alt: 'French Flag',
+        caption: 'Walking to the train station on the way to work.'
+      },
+      { 
+        id: 2, 
+        url: '/photos/lyon/palais_bourse.JPG', 
+        alt: 'Palais de la Bourse de Lyon',
+        caption: 'Fancy party at Palais de la Bourse de Lyon. I was\'nt invited.'
+      },
+      { 
+        id: 3, 
+        url: '/photos/lyon/place_jacobins.JPG', 
+        alt: 'Place des Jacobins',
+        caption: 'Peaceful Place des Jacobins. Good bakery nearby, Les Pain des Jacobins.'
+      },
+      { 
+        id: 4, 
+        url: '/photos/lyon/aynaz.JPG', 
+        alt: 'Aynaz',
+        caption: 'Aynaz in front of Parc de la Tete d\'Or.'
+      },
+      { 
+        id: 5, 
+        url: '/photos/lyon/saone.JPG', 
+        alt: 'River Saone',
+        caption: 'Buildings rise on the hill behind the river Saone.'
+      },
+      { 
+        id: 6, 
+        url: '/photos/lyon/vieux_lyon.JPG', 
+        alt: 'Vieux Lyon',
+        caption: 'Vieux Lyon from Place Bellecour. There are many churches.'
+      }
     ]
   },
   annecy: {
     name: 'Lyon',
-    description: 'Weekend trip to the alpine lake town, Annecy',
+    description: '5.29 - 6.1.25 | Annecy changed my life',
     photos: [
-      // 
+      { 
+        id: 1, 
+        url: '/photos/annecy/paraglider.JPG', 
+        alt: 'Paraglider',
+        caption: 'Paragliding in Doussard, on the other side of Lac Annecy.'
+      },
+      { 
+        id: 2, 
+        url: '/photos/annecy/mountain.JPG', 
+        alt: 'Sunset Mountain',
+        caption: 'Sunset over the mountains while chilling on the lake.'
+      },
+      { 
+        id: 3, 
+        url: '/photos/annecy/church.JPG', 
+        alt: 'Church',
+        caption: 'Basilique de la Visitation. I think Henry went to mass there.'
+      },
+      { 
+        id: 4, 
+        url: '/photos/annecy/landing.JPG', 
+        alt: 'Aynaz Landing',
+        caption: 'Aynaz went paragliding, but I was too scared. I regret it.'
+      },
+      { 
+        id: 5, 
+        url: '/photos/annecy/bike.JPG', 
+        alt: 'Bikers',
+        caption: 'There was a big bike race. We biked around the lake, too, but not in the race. 26 miles... Sorry mom & dad :)'
+      },
+      { 
+        id: 6, 
+        url: '/photos/annecy/street.JPG', 
+        alt: 'Street View',
+        caption: 'Rule of thirds in the streets of Annecy.'
+      },
+      { 
+        id: 7, 
+        url: '/photos/annecy/backyard.JPG', 
+        alt: 'Airbnb Backyard',
+        caption: 'The Airbnb was super cool. Nice backyard.'
+      },
+      { 
+        id: 8, 
+        url: '/photos/annecy/city.JPG', 
+        alt: 'Annecy City',
+        caption: 'We had some really good crepes here.'
+      },
+      { 
+        id: 9, 
+        url: '/photos/annecy/lake.JPG', 
+        alt: 'Lac Annecy',
+        caption: 'I think I could live here if I spoke French.'
+      }
     ]
   },
   chamonix: {
-    name: 'Lyon',
-    description: 'NSF Summer Research Program in Lyon, France',
+    name: 'Chamonix',
+    description: '7.4 - 7.6.25 | Weekend trip with IRES cohort. 7.24.25 | So good I had to come back',
+    photos: [
+      { 
+        id: 1, 
+        url: '/photos/chamonix/peak.JPG', 
+        alt: 'Aiguille du Midi',
+        caption: 'Aiguille du Midi peeks over the clouds.'
+      },
+      { 
+        id: 2, 
+        url: '/photos/chamonix/street.JPG', 
+        alt: 'Street View',
+        caption: 'Great truffle pizza at JOIA with Mont Blanc in the background.'
+      },
+      { 
+        id: 3, 
+        url: '/photos/chamonix/rocks.JPG', 
+        alt: 'Rocks and Paraglider',
+        caption: 'We took the cable car up to Planpraz and hiked up to Brevent.'
+      },
+      { 
+        id: 4, 
+        url: '/photos/chamonix/hiker_1.JPG', 
+        alt: 'Random Hiker',
+        caption: 'Random hiker looking aesthetic against the mountains.'
+      },
+      { 
+        id: 5, 
+        url: '/photos/chamonix/hiker_2.JPG', 
+        alt: 'Random Hiker Again',
+        caption: 'Same random hiker walking a little further.'
+      },
+      { 
+        id: 6, 
+        url: '/photos/chamonix/henry.JPG', 
+        alt: 'Henry',
+        caption: 'Not a random hiker. This is Henry taking a break.'
+      },
+      { 
+        id: 7, 
+        url: '/photos/chamonix/cable_1.JPG', 
+        alt: 'Cable Car',
+        caption: 'Cable car to Brevent looking so scary.'
+      },
+      { 
+        id: 8, 
+        url: '/photos/chamonix/moon.JPG', 
+        alt: 'Moon',
+        caption: 'Beautiful sunset against the mountain and moon.'
+      },
+      { 
+        id: 9, 
+        url: '/photos/chamonix/aynaz_1.JPG', 
+        alt: 'Aynaz',
+        caption: 'I think Aynaz is facing the wrong way.'
+      },
+      { 
+        id: 10, 
+        url: '/photos/chamonix/cabin.JPG', 
+        alt: 'Cabin',
+        caption: 'Cozy looking cabin on the hike to Brevent.'
+      },
+      { 
+        id: 11, 
+        url: '/photos/chamonix/spout.JPG', 
+        alt: 'Spout',
+        caption: 'Water spout at Chalet de La Floria. Highly recommend.'
+      },
+      { 
+        id: 12, 
+        url: '/photos/chamonix/aynaz_2.JPG', 
+        alt: 'Aynaz Again',
+        caption: 'I think Aynaz is facing the wrong way again.'
+      },
+      { 
+        id: 13, 
+        url: '/photos/chamonix/glacier.JPG', 
+        alt: 'Mer de Glace',
+        caption: 'The Mer de Glace glacier is almost gone. We need to take care of the world.'
+      },
+      { 
+        id: 14, 
+        url: '/photos/chamonix/train.JPG', 
+        alt: 'Train',
+        caption: 'We took the train up to the glacier and hiked back down.'
+      },
+      { 
+        id: 15, 
+        url: '/photos/chamonix/cable_2.JPG', 
+        alt: 'Cable Car Again',
+        caption: 'One more cable car shot :)'
+      }
+    ]
+  },
+  geneva: {
+    name: 'Geneva',
+    description: '5.16 - 5.17.25, 7.30 - 7.31.25 | Flew in/out of Geneva to Lyon',
     photos: [
       // 
     ]
   },
-  geneva: {
-    name: 'Lyon',
-    description: 'NSF Summer Research Program in Lyon, France',
+  grenoble: {
+    name: 'Grenoble',
+    description: '5.25.25 | Day trip to Grenoble with the gang',
+    photos: [
+      // 
+    ]
+  },
+  nice: {
+    name: 'Nice',
+    description: '7.19 - 7.21.25 | Nice for Sarah\'s birthday',
     photos: [
       // 
     ]
   },
   paris: {
-    name: 'Lyon',
-    description: 'NSF Summer Research Program in Lyon, France',
+    name: 'Paris',
+    description: '6.6 - 6.7.25 | Visited Charles and Roland Garros. 7.14.25 | La Fete Nationale',
+    photos: [
+      // 
+    ]
+  },
+  turin: {
+    name: 'Turin',
+    description: '6.20 - 6.22.25 | There are many churches in Turin',
     photos: [
       // 
     ]
   },
   london: {
     name: 'London',
-    description: 'Study Abroad Spring 2026 in London',
+    description: '1.7 - 5.1.25 | Study Abroad Spring 2026 in London',
     photos: [
       {
         id: 1,
@@ -642,9 +864,10 @@ export const galleries = {
 }
 
 export const galleryNav = [
-  { type: 'gallery', id: 'home' },
-  {
-    type: 'folder',
+  { type: 'gallery', 
+    id: 'home' 
+  },
+  { type: 'folder',
     id: 'study-abroad',
     name: 'Study Abroad',
     galleries: [
@@ -660,8 +883,20 @@ export const galleryNav = [
       'madeira',
       'rome',
       'pompeii',
-      'amalfi',
-    ],
+      'amalfi'
+    ]
   },
-  { type: 'gallery', id: 'lyon' },
+  { type: 'folder', 
+    id: 'lyon-research',
+    name: 'Summer Research Lyon',
+    galleries: [
+      'lyon',
+      'annecy',
+      'chamonix',
+      'geneva',
+      'grenoble',
+      'nice',
+      'paris',
+      'turin'
+    ] },
 ]
