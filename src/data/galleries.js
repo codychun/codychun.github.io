@@ -107,7 +107,7 @@ export const galleries = {
     photos: [
       { 
         id: 1, 
-        url: '/photos/annecy/paraglider.JPG', 
+        url: '/photos/annecy/paraglider.JPEG', 
         alt: 'Paraglider',
         caption: 'Paragliding in Doussard, on the other side of Lac Annecy.'
       },
@@ -137,7 +137,7 @@ export const galleries = {
       },
       { 
         id: 6, 
-        url: '/photos/annecy/street.JPG', 
+        url: '/photos/annecy/street.jpg', 
         alt: 'Street View',
         caption: 'Rule of thirds in the streets of Annecy.'
       },
@@ -185,19 +185,19 @@ export const galleries = {
       },
       { 
         id: 4, 
-        url: '/photos/chamonix/hiker_1.JPG', 
+        url: '/photos/chamonix/hiker_1.JPEG', 
         alt: 'Random Hiker',
         caption: 'Random hiker looking aesthetic against the mountains.'
       },
       { 
         id: 5, 
-        url: '/photos/chamonix/hiker_2.JPG', 
+        url: '/photos/chamonix/hiker_2.JPEG', 
         alt: 'Random Hiker Again',
         caption: 'Same random hiker walking a little further.'
       },
       { 
         id: 6, 
-        url: '/photos/chamonix/henry.JPG', 
+        url: '/photos/chamonix/henry.JPEG', 
         alt: 'Henry',
         caption: 'Not a random hiker. This is Henry taking a break.'
       },
@@ -209,7 +209,7 @@ export const galleries = {
       },
       { 
         id: 8, 
-        url: '/photos/chamonix/moon.JPG', 
+        url: '/photos/chamonix/moon.JPEG', 
         alt: 'Moon',
         caption: 'Beautiful sunset against the mountain and moon.'
       },
