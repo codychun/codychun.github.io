@@ -102,7 +102,7 @@ export const galleries = {
     ]
   },
   annecy: {
-    name: 'Lyon',
+    name: 'Annecy',
     description: '5.29 - 6.1.25 | Annecy changed my life',
     photos: [
       { 
