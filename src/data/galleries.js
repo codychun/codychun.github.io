@@ -65,37 +65,37 @@ export const galleries = {
     photos: [
       { 
         id: 1, 
-        url: '/photos/lyon/flag.JPG', 
+        url: '/photos/lyon/lyon/flag.JPG', 
         alt: 'French Flag',
         caption: 'Walking to the train station on the way to work.'
       },
       { 
         id: 2, 
-        url: '/photos/lyon/palais_bourse.JPG', 
+        url: '/photos/lyon/lyon/palais_bourse.JPG', 
         alt: 'Palais de la Bourse de Lyon',
         caption: 'Fancy party at Palais de la Bourse de Lyon. I was\'nt invited.'
       },
       { 
         id: 3, 
-        url: '/photos/lyon/place_jacobins.JPG', 
+        url: '/photos/lyon/lyon/place_jacobins.JPG', 
         alt: 'Place des Jacobins',
         caption: 'Peaceful Place des Jacobins. Good bakery nearby, Les Pain des Jacobins.'
       },
       { 
         id: 4, 
-        url: '/photos/lyon/aynaz.JPG', 
+        url: '/photos/lyon/lyon/aynaz.JPG', 
         alt: 'Aynaz',
         caption: 'Aynaz in front of Parc de la Tete d\'Or.'
       },
       { 
         id: 5, 
-        url: '/photos/lyon/saone.JPG', 
+        url: '/photos/lyon/lyon/saone.JPG', 
         alt: 'River Saone',
         caption: 'Buildings rise on the hill behind the river Saone.'
       },
       { 
         id: 6, 
-        url: '/photos/lyon/vieux_lyon.JPG', 
+        url: '/photos/lyon/lyon/vieux_lyon.JPG', 
         alt: 'Vieux Lyon',
         caption: 'Vieux Lyon from Place Bellecour. There are many churches.'
       }
@@ -107,55 +107,55 @@ export const galleries = {
     photos: [
       { 
         id: 1, 
-        url: '/photos/annecy/paraglider.JPEG', 
+        url: '/photos/lyon/annecy/paraglider.JPEG', 
         alt: 'Paraglider',
         caption: 'Paragliding in Doussard, on the other side of Lac Annecy.'
       },
       { 
         id: 2, 
-        url: '/photos/annecy/mountain.JPG', 
+        url: '/photos/lyon/annecy/mountain.JPG', 
         alt: 'Sunset Mountain',
         caption: 'Sunset over the mountains while chilling on the lake.'
       },
       { 
         id: 3, 
-        url: '/photos/annecy/church.JPG', 
+        url: '/photos/lyon/annecy/church.JPG', 
         alt: 'Church',
         caption: 'Basilique de la Visitation. I think Henry went to mass there.'
       },
       { 
         id: 4, 
-        url: '/photos/annecy/landing.JPG', 
+        url: '/photos/lyon/annecy/landing.JPG', 
         alt: 'Aynaz Landing',
         caption: 'Aynaz went paragliding, but I was too scared. I regret it.'
       },
       { 
         id: 5, 
-        url: '/photos/annecy/bike.JPG', 
+        url: '/photos/lyon/annecy/bike.JPG', 
         alt: 'Bikers',
         caption: 'There was a big bike race. We biked around the lake, too, but not in the race. 26 miles... Sorry mom & dad :)'
       },
       { 
         id: 6, 
-        url: '/photos/annecy/street.jpg', 
+        url: '/photos/lyon/annecy/street.jpg', 
         alt: 'Street View',
         caption: 'Rule of thirds in the streets of Annecy.'
       },
       { 
         id: 7, 
-        url: '/photos/annecy/backyard.JPG', 
+        url: '/photos/lyon/annecy/backyard.JPG', 
         alt: 'Airbnb Backyard',
         caption: 'The Airbnb was super cool. Nice backyard.'
       },
       { 
         id: 8, 
-        url: '/photos/annecy/city.JPG', 
+        url: '/photos/lyon/annecy/city.JPG', 
         alt: 'Annecy City',
         caption: 'We had some really good crepes here.'
       },
       { 
         id: 9, 
-        url: '/photos/annecy/lake.JPG', 
+        url: '/photos/lyon/annecy/lake.JPG', 
         alt: 'Lac Annecy',
         caption: 'I think I could live here if I spoke French.'
       }
@@ -167,91 +167,91 @@ export const galleries = {
     photos: [
       { 
         id: 1, 
-        url: '/photos/chamonix/peak.JPG', 
+        url: '/photos/lyon/chamonix/peak.JPG', 
         alt: 'Aiguille du Midi',
         caption: 'Aiguille du Midi peeks over the clouds.'
       },
       { 
         id: 2, 
-        url: '/photos/chamonix/street.JPG', 
+        url: '/photos/lyon/chamonix/street.JPG', 
         alt: 'Street View',
         caption: 'Great truffle pizza at JOIA with Mont Blanc in the background.'
       },
       { 
         id: 3, 
-        url: '/photos/chamonix/rocks.JPG', 
+        url: '/photos/lyon/chamonix/rocks.JPG', 
         alt: 'Rocks and Paraglider',
         caption: 'We took the cable car up to Planpraz and hiked up to Brevent.'
       },
       { 
         id: 4, 
-        url: '/photos/chamonix/hiker_1.JPEG', 
+        url: '/photos/lyon/chamonix/hiker_1.JPEG', 
         alt: 'Random Hiker',
         caption: 'Random hiker looking aesthetic against the mountains.'
       },
       { 
         id: 5, 
-        url: '/photos/chamonix/hiker_2.JPEG', 
+        url: '/photos/lyon/chamonix/hiker_2.JPEG', 
         alt: 'Random Hiker Again',
         caption: 'Same random hiker walking a little further.'
       },
       { 
         id: 6, 
-        url: '/photos/chamonix/henry.JPEG', 
+        url: '/photos/lyon/chamonix/henry.JPEG', 
         alt: 'Henry',
         caption: 'Not a random hiker. This is Henry taking a break.'
       },
       { 
         id: 7, 
-        url: '/photos/chamonix/cable_1.JPG', 
+        url: '/photos/lyon/chamonix/cable_1.JPG', 
         alt: 'Cable Car',
         caption: 'Cable car to Brevent looking so scary.'
       },
       { 
         id: 8, 
-        url: '/photos/chamonix/moon.JPEG', 
+        url: '/photos/lyon/chamonix/moon.JPEG', 
         alt: 'Moon',
         caption: 'Beautiful sunset against the mountain and moon.'
       },
       { 
         id: 9, 
-        url: '/photos/chamonix/aynaz_1.JPG', 
+        url: '/photos/lyon/chamonix/aynaz_1.JPG', 
         alt: 'Aynaz',
         caption: 'I think Aynaz is facing the wrong way.'
       },
       { 
         id: 10, 
-        url: '/photos/chamonix/cabin.JPG', 
+        url: '/photos/lyon/chamonix/cabin.JPG', 
         alt: 'Cabin',
         caption: 'Cozy looking cabin on the hike to Brevent.'
       },
       { 
         id: 11, 
-        url: '/photos/chamonix/spout.JPG', 
+        url: '/photos/lyon/chamonix/spout.JPG', 
         alt: 'Spout',
         caption: 'Water spout at Chalet de La Floria. Highly recommend.'
       },
       { 
         id: 12, 
-        url: '/photos/chamonix/aynaz_2.JPG', 
+        url: '/photos/lyon/chamonix/aynaz_2.JPG', 
         alt: 'Aynaz Again',
         caption: 'I think Aynaz is facing the wrong way again.'
       },
       { 
         id: 13, 
-        url: '/photos/chamonix/glacier.JPG', 
+        url: '/photos/lyon/chamonix/glacier.JPG', 
         alt: 'Mer de Glace',
         caption: 'The Mer de Glace glacier is almost gone. We need to take care of the world.'
       },
       { 
         id: 14, 
-        url: '/photos/chamonix/train.JPG', 
+        url: '/photos/lyon/chamonix/train.JPG', 
         alt: 'Train',
         caption: 'We took the train up to the glacier and hiked back down.'
       },
       { 
         id: 15, 
-        url: '/photos/chamonix/cable_2.JPG', 
+        url: '/photos/lyon/chamonix/cable_2.JPG', 
         alt: 'Cable Car Again',
         caption: 'One more cable car shot :)'
       }
