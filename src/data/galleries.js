@@ -299,7 +299,7 @@ export const galleries = {
       },
       {
         id: 7,
-        url: '/photos/lyon/geneva/seat.JPG',
+        url: '/photos/lyon/geneva/seat.jpg',
         alt: 'Cafe Seating',
         caption: 'A cute cafe seating area in the street. 10AM is too early in Europe.'
       },
@@ -319,9 +319,62 @@ export const galleries = {
   },
   grenoble: {
     name: 'Grenoble',
-    description: '5.25.25 | Day trip to Grenoble with the gang',
+    description: '5.25.25 | Day trip to Grenoble with IRES Cohort',
     photos: [
-      // 
+      {
+        id: 1,
+        url: '/photos/lyon/grenoble/building.JPG',
+        alt: 'Building',
+        caption: 'What a view off of that balcony...'
+      },
+      {
+        id: 2,
+        url: '/photos/lyon/grenoble/point.JPG',
+        alt: 'Point',
+        caption: 'What are you looking at? The mountain is behind you!'
+      },
+      {
+        id: 3,
+        url: '/photos/lyon/grenoble/zip.JPG',
+        alt: 'Zip',
+        caption: 'Zip! To Forte de La Bastille we go!'
+      },
+      {
+        id: 4,
+        url: '/photos/lyon/grenoble/mountain.JPG',
+        alt: 'Mountain',
+        caption: 'The mountains beyond stretch above and below. They fill your whole view.'
+      },
+      {
+        id: 5,
+        url: '/photos/lyon/grenoble/street.JPG',
+        alt: 'Street',
+        caption: 'Just walking and talking down the street. I think we were discussing my middle name.'
+      },
+      {
+        id: 6,
+        url: '/photos/lyon/grenoble/statue.JPG',
+        alt: 'Statue',
+        caption: 'We had a picnic in the courtyard. French baguette, cheese, and jambon—too good to go! Statue guy is dripped out!'
+      },
+      {
+        id: 7,
+        url: '/photos/lyon/grenoble/flower.JPG',
+        alt: 'Flower',
+        caption: 'Lonely flower on the hill. Maybe too much saturation?'
+      },
+      {
+        id: 8,
+        url: '/photos/lyon/grenoble/street_high.JPG',
+        alt: 'Long Street',
+        caption: 'Grenoble is known for this really long street. Sarah and Aynaz are appreciating it from the fort.'
+      },
+      {
+        id: 9,
+        url: '/photos/lyon/grenoble/sky.JPG',
+        alt: 'Sky View',
+        caption: 'We\'re riding the cable car. The mountains rise over the streets and the city grows small.'
+      }
     ]
   },
   nice: {
