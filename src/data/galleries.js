@@ -259,9 +259,62 @@ export const galleries = {
   },
   geneva: {
     name: 'Geneva',
-    description: '5.16 - 5.17.25, 7.30 - 7.31.25 | Flew in/out of Geneva to Lyon',
+    description: '5.16 - 5.17.25, 7.30 - 7.31.25 | Alone in Geneva. Hello and Goodbye to Europe.',
     photos: [
-      // 
+      { 
+        id: 1, 
+        url: '/photos/lyon/geneva/art_history.JPG', 
+        alt: 'Musée d\'Art et d\'Histoire',
+        caption: 'Trumpeter at the Musée d\'Art et d\'Histoire.'
+      },
+      {
+        id: 2,
+        url: '/photos/lyon/geneva/brunswick_monument.JPG',
+        alt: 'Brunswick Monument',
+        caption: 'Struck with Lake Geneva and the Brunswick Monument outside my hotel.'
+      },
+      {
+        id: 3,
+        url: '/photos/lyon/geneva/eglise_russe.JPG',
+        alt: 'Église Russe',
+        caption: 'I wandered around the old town and found this Russian Orthodox Church, Église Russe.'
+      },
+      {
+        id: 4,
+        url: '/photos/lyon/geneva/lac_geneve_1.JPG',
+        alt: 'Lac Geneve 1',
+        caption: 'Lac Geneve is pretty at sunset.'
+      },
+      {
+        id: 5,
+        url: '/photos/lyon/geneva/paparazzi_1.JPG',
+        alt: 'Paparazzi 1',
+        caption: 'A group of boys asked me to take a picture for them. Experimenting with Lightroom.'
+      },
+      {
+        id: 6,
+        url: '/photos/lyon/geneva/paparazzi_2.JPG',
+        alt: 'Paparazzi 2',
+        caption: 'Fun group of guys. I wish I could speak French with them.'
+      },
+      {
+        id: 7,
+        url: '/photos/lyon/geneva/seat.JPG',
+        alt: 'Cafe Seating',
+        caption: 'A cute cafe seating area in the street. 10AM is too early in Europe.'
+      },
+      {
+        id: 8,
+        url: '/photos/lyon/geneva/street.JPG',
+        alt: 'Street',
+        caption: 'The streets wind around, up and down.'
+      },
+      {
+        id: 9,
+        url: '/photos/lyon/geneva/lac_geneve_2.JPG',
+        alt: 'Lac Geneve 2',
+        caption: 'A couple admires the lake, and each other.'
+      }
     ]
   },
   grenoble: {
@@ -867,7 +920,20 @@ export const galleryNav = [
   { type: 'gallery', 
     id: 'home' 
   },
-  { type: 'folder',
+  { type: 'folder', 
+    id: 'lyon-research',
+    name: 'Summer Research Lyon',
+    galleries: [
+      'lyon',
+      'annecy',
+      'chamonix',
+      'geneva',
+      'grenoble',
+      'nice',
+      'paris',
+      'turin'
+    ] },
+    { type: 'folder',
     id: 'study-abroad',
     name: 'Study Abroad',
     galleries: [
@@ -886,17 +952,4 @@ export const galleryNav = [
       'amalfi'
     ]
   },
-  { type: 'folder', 
-    id: 'lyon-research',
-    name: 'Summer Research Lyon',
-    galleries: [
-      'lyon',
-      'annecy',
-      'chamonix',
-      'geneva',
-      'grenoble',
-      'nice',
-      'paris',
-      'turin'
-    ] },
 ]
