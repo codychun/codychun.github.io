@@ -275,7 +275,7 @@ export const galleries = {
       },
       {
         id: 3,
-        url: '/photos/lyon/geneva/eglise_russe.JPG',
+        url: '/photos/lyon/geneva/eglise_russe.JPEG',
         alt: 'Église Russe',
         caption: 'I wandered around the old town and found this Russian Orthodox Church, Église Russe.'
       },
@@ -913,7 +913,8 @@ export const galleries = {
     photos: [
       {}
     ]
-  }
+  },
+
 }
 
 export const galleryNav = [
