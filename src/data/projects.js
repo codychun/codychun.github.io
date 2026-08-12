@@ -24,7 +24,7 @@ export const projects = [
     image: '/projects/gps_tracker.png',
     tech: ['Embedded C', 'KiCad', 'FreeRTOS', 'UART', 'SPI', 'Raspberry Pi'],
     link: '/alarm-clock',
-    github: 'https://github.com/codychun/codychun.github.io/tree/main/src/pages/AlarmPage'
+    github: 'https://github.com/codychun/lora-gps-tracker'
   },
   {
     id: 4,
