@@ -381,21 +381,180 @@ export const galleries = {
     name: 'Nice',
     description: '7.19 - 7.21.25 | Nice for Sarah\'s birthday',
     photos: [
-      // 
+      {
+        id: 1,
+        url: '/photos/lyon/nice/negresco.JPG',
+        alt: 'Le Negresco',
+        caption: 'Iconic Le Negresco on the beach front.'
+      },
+      {
+        id: 2,
+        url: '/photos/lyon/nice/horizon.JPG',
+        alt: 'Horizon',
+        caption: 'You have to pay to sit on the beach chairs :('
+      },
+      {
+        id: 3,
+        url: '/photos/lyon/nice/beach_1.JPG',
+        alt: 'Beach 1',
+        caption: 'The water was so cold, even in the middle of summer.'
+      },
+      {
+        id: 4,
+        url: '/photos/lyon/nice/beach_2.JPG',
+        alt: 'Beach 2',
+        caption: 'View of Nice from above. It was a tough hike up those stairs...'
+      },
+      {
+        id: 5,
+        url: '/photos/lyon/nice/palm.JPG',
+        alt: 'Palm Tree',
+        caption: 'The sun sets behind the palms.'
+      },
+      {
+        id: 6,
+        url: '/photos/lyon/nice/window.JPG',
+        alt: 'Window',
+        caption: 'Beuatiful window from inside the Cathédrale Saint-Nicolas.'
+      },
+      {
+        id: 7,
+        url: '/photos/lyon/nice/alley.JPG',
+        alt: 'Alley',
+        caption: 'A small alleyway in Old Town. Kept coming back here for amazing gelato.'
+      },
+      {
+        id: 8,
+        url: '/photos/lyon/nice/aynaz.JPG',
+        alt: 'Aynaz',
+        caption: 'Aynaz in front of the Fontaine du Soleil.'
+      },
+      {
+        id: 9,
+        url: '/photos/lyon/nice/bird.JPG',
+        alt: 'Bird',
+        caption: 'A seagull perches upon a statue at Chapelle de la Miséricorde.'
+      }
     ]
   },
   paris: {
     name: 'Paris',
     description: '6.6 - 6.7.25 | Visited Charles and Roland Garros. 7.14.25 | La Fete Nationale',
     photos: [
-      // 
+      {
+        id: 1,
+        url: '/photos/lyon/paris/eglise_st_augustin.JPG',
+        alt: 'Eglise St Augustin',
+        caption: 'Me and Henry walked to Eglise Saint Augustin from the Louvre. Actually, we walked all over Paris...'
+      },
+      {
+        id: 2,
+        url: '/photos/lyon/paris/notre_dame.JPG',
+        alt: 'Notre Dame Cathedral',
+        caption: 'The Notre Dame Cathedral completed. I went here for mass with Charles, and the organ was heavenly.'
+      },
+      {
+        id: 3,
+        url: '/photos/lyon/paris/napoleon.JPG',
+        alt: 'Napoleon\'s Room',
+        caption: 'Napoleon\'s apartment on display in the Louvre.'
+      },
+      {
+        id: 4,
+        url: '/photos/lyon/paris/louvre_statue.JPG',
+        alt: 'Louvre Statue',
+        caption: 'Statues in the courtyard of the Louvre.'
+      },
+      {
+        id: 5,
+        url: '/photos/lyon/paris/louvre.JPG',
+        alt: 'Louvre Outside',
+        caption: 'Me and Henry waited over an hour in line on La Fete Nationale, but we got in free!'
+      },
+      {
+        id: 6,
+        url: '/photos/lyon/paris/louvre_window.JPG',
+        alt: 'Louvre Window',
+        caption: 'The iconic glass pyramid from below. The architecture is stunning.'
+      },
+      {
+        id: 7,
+        url: '/photos/lyon/paris/eiffel_firework.JPG',
+        alt: 'Eiffel Tower Firework',
+        caption: 'Fireworks from the Eiffel Tower on La Fete Nationale.'
+      },
+      {
+        id: 8,
+        url: '/photos/lyon/paris/eiffel_night.JPG',
+        alt: 'Eiffel Tower Night',
+        caption: 'We did not plan our viewing well. Most of the fireworks were blocked by the buildings, but we had fun regardless!'
+      },
+      {
+        id: 9,
+        url: '/photos/lyon/paris/eiffel_red.JPG',
+        alt: 'Eiffel Tower Red',
+        caption: 'After a day of walking all over Paris and seeing (barely any) fireworks, we stayed up all night at a bar and walked 2 hours to the train station in the morning. College days!'
+      },
+      {
+        id: 10,
+        url: '/photos/lyon/paris/sinner.JPG',
+        alt: 'Jannik Sinner',
+        caption: 'I got grounds tickets to Roland Garros, and got to see Sinner hitting with Kouame!'
+      },
+      {
+        id: 11,
+        url: '/photos/lyon/paris/rg_court.JPG',
+        alt: 'RG Court',
+        caption: 'I\'ve never seen a clay so red and beautiful.'
+      },
+      {
+        id: 12,
+        url: '/photos/lyon/paris/rg_hat.JPG',
+        alt: 'RG Hat',
+        caption: 'TS is SO tuff twin.'
+      }
     ]
   },
   turin: {
     name: 'Turin',
     description: '6.20 - 6.22.25 | There are many churches in Turin',
     photos: [
-      // 
+      {
+        id: 1,
+        url: '/photos/lyon/turin/statue.JPG',
+        alt: 'Statue',
+        caption: 'There\'s so many statues and churches in Turin. All very beautiful. This one\'s near Parco Archeologico Torri Palatine.'
+      },
+      {
+        id: 2,
+        url: '/photos/lyon/turin/statue_1.JPG',
+        alt: 'Statue 1',
+        caption: 'I think this is outside of a church, but I don\'t know which one.'
+      },
+      {
+        id: 3,
+        url: '/photos/lyon/turin/statue_2.JPG',
+        alt: 'Statue 2',
+        caption: 'Henry Really wanted to go to Turin. Italy in general, and Turin was closest, only 4 hours Flix Bus.'
+      },
+      {
+        id: 4,
+        url: '/photos/lyon/turin/statue_3.JPG',
+        alt: 'Statue 3',
+        caption: 'So so so many churches. I was in awe with each new one. There\'s also a really big Egyptian museum.'
+      },
+      {
+        id: 5,
+        url: '/photos/lyon/turin/flag.JPG',
+        alt: 'Flag',
+        caption: 'Some of the best gelato and tiramisu I\'ve ever had. It even clears Rome. The risotto though...not so much.'
+      },
+      {
+        id: 6,
+        url: '/photos/lyon/turin/music.JPG',
+        alt: 'Music',
+        caption: 'This guy was playing guitar and singing in the courtyard at night. I love the live music in Europe.'
+      }
     ]
   },
   london: {
