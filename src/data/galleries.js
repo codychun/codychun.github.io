@@ -1093,45 +1093,638 @@ export const galleries = {
   },
   istanbul:{
     name: 'Istanbul',
-    descrition: '2.26 - 3.2.26 | ',
+    description: '2.26 - 3.2.26 | Weekend trip with many ND students and Evan.',
     photos: [
-      {}
+      {
+        id: 1,
+        url: '/photos/london/istanbul/blue_mosque.JPG',
+        alt: 'Blue Mosque',
+        caption: 'Me and Evan had to wait for specific viewing time at the Blue Mosque (Sultanahmet).'
+      },
+      {
+        id: 2,
+        url: '/photos/london/istanbul/blue_inside.JPG',
+        alt: 'Blue Mosque Inside',
+        caption: 'Art and inscriptions inside the Blue Mosque.'
+      },
+      {
+        id: 3,
+        url: '/photos/london/istanbul/hagia_sophia.JPG',
+        alt: 'Hagia Sophia',
+        caption: 'The Hagia Sophia across Sultanahmet square from the Blue Mosque. Evan and I ate at The Pudding Shop as per Aunty Laura\'s recommendation.'
+      },
+      {
+        id: 4,
+        url: '/photos/london/istanbul/camlica_hill.JPG',
+        alt: 'Camlica Hill',
+        caption: 'Me and Evan went to Camlica Hill on our last day, after everyone else left. We\'re in Asia!'
+      },
+      {
+        id: 5,
+        url: '/photos/london/istanbul/camlica_mosque_1.JPG',
+        alt: 'Camlica Mosque 1',
+        caption: 'Blending the old and the new.'
+      },
+      {
+        id: 6,
+        url: '/photos/london/istanbul/camlica_mosque_2.JPG',
+        alt: 'Camlica Mosque 2',
+        caption: 'Another angle of Camlica Mosque from the Bosphorus.'
+      },
+      {
+        id: 7,
+        url: '/photos/london/istanbul/evan.JPG',
+        alt: 'Evan',
+        caption: 'Evan posing in front of the Strait, near the Museum of Modern Art.'
+      },
+      {
+        id: 8,
+        url: '/photos/london/istanbul/galata_1.JPG',
+        alt: 'Galata Tower 1',
+        caption: 'The brightly colored tourist shops near Galata Tower.'
+      },
+      {
+        id: 9,
+        url: '/photos/london/istanbul/galata_2.JPG',
+        alt: 'Galata Tower 2',
+        caption: 'The street comes alive at night. Got some REALLY good halva on this street.'
+      },
+      {
+        id: 10,
+        url: '/photos/london/istanbul/bazaar.JPG',
+        alt: 'Grand Bazaar',
+        caption: 'Lanterns in a shop in the Grand Bazaar. We were talking with some guy about watches for a while.'
+      },
+      {
+        id: 11,
+        url: '/photos/london/istanbul/cats.JPG',
+        alt: 'Cats',
+        caption: 'Playful cats on Camlica Hill. Even the cats are similar to Greece.'
+      },
+      {
+        id: 12,
+        url: '/photos/london/istanbul/street_1.JPG',
+        alt: 'Street 1',
+        caption: 'We almost got stuck in Turkiye. The war started the day we left and flights started getting canceled.'
+      },
+      {
+        id: 13,
+        url: '/photos/london/istanbul/street_2.JPG',
+        alt: 'Street 2',
+        caption: 'Walking around the city with the Notre Dame group. We barely slept after our overnight flight.'
+      },
+      {
+        id: 14,
+        url: '/photos/london/istanbul/girls.JPG',
+        alt: 'Girls on Boat',
+        caption: 'Girls looking at pictures on the Bosphorus Strait boat tour.'
+      },
+      {
+        id: 15,
+        url: '/photos/london/istanbul/seagulls.JPG',
+        alt: 'Seagulls',
+        caption: 'Seagulls on the Strait.'
+      },
+      {
+        id: 16,
+        url: '/photos/london/istanbul/lighthouse.JPG',
+        alt: 'Lighthouse',
+        caption: 'The Maiden\'s Tower at the end of the boat tour. There must have been a story for the name, but I don\'t remember...'
+      },
+      {
+        id: 17,
+        url: '/photos/london/istanbul/sunset_1.JPG',
+        alt: 'Sunset 1',
+        caption: 'Birds don\'t appreciate the view. I do.'
+      },
+      {
+        id: 18,
+        url: '/photos/london/istanbul/sunset_2.JPG',
+        alt: 'Sunset 2',
+        caption: 'Mosque under the sun.'
+      },
     ]
   },
   madeira:{
     name: 'Madeira',
-    descrition: '3.5 - 3.10.26 | ',
+    description: '3.5 - 3.10.26 | Start of Spring Break. I always wanted to hike in Madeira.',
     photos: [
-      {}
+      {
+        id: 1,
+        url: '/photos/london/madeira/canico_1.JPG',
+        alt: 'Canico 1',
+        caption: 'Bird of Paradise at the beach near our Airbnb.'
+      },
+      {
+        id: 2,
+        url: '/photos/london/madeira/canico_2.JPG',
+        alt: 'Canico 2',
+        caption: 'Sunset on the blacony of our Airbnb. It was soo nice, especially compared to the hostel...'
+      },
+      {
+        id: 3,
+        url: '/photos/london/madeira/canico_3.JPG',
+        alt: 'Canico 3',
+        caption: 'Another island sunset. Reminds me of home.'
+      },
+      {
+        id: 4,
+        url: '/photos/london/madeira/larano_start.JPG',
+        alt: 'Larano Start',
+        caption: 'Start of the Vereda do Larano hike. The Uber driver had to be so skilled driving up those tiny roads.'
+      },
+      {
+        id: 5,
+        url: '/photos/london/madeira/larano_end.JPG',
+        alt: 'Larano End',
+        caption: 'One of my favorites on Madeira. Solo hiked the day before everyone else arrived.'
+      },
+      {
+        id: 6,
+        url: '/photos/london/madeira/larano_1.JPG',
+        alt: 'Larano 1',
+        caption: 'Walking up the narrow road to the cliffs overlooking the ocean.'
+      },
+      {
+        id: 7,
+        url: '/photos/london/madeira/larano_2.JPG',
+        alt: 'Larano 2',
+        caption: 'Unreal views, slightly obscured by the clouds :/.'
+      },
+      {
+        id: 8,
+        url: '/photos/london/madeira/larano_3.JPG',
+        alt: 'Larano 3',
+        caption: 'Stopped for a lunch break: baguette and canned tuna. Throwback to the France method!'
+      },
+      {
+        id: 9,
+        url: '/photos/london/madeira/larano_4.JPG',
+        alt: 'Larano 4',
+        caption: 'View of iconic PR8 from the cliffs.'
+      },
+      {
+        id: 10,
+        url: '/photos/london/madeira/larano_5.JPG',
+        alt: 'Larano 5',
+        caption: 'PR8. No way I was making the rest of that in one day.'
+      },
+      {
+        id: 11,
+        url: '/photos/london/madeira/pr6.JPG',
+        alt: 'PR 6.3',
+        caption: 'PR6.3 Veredada Lagoa do Vento. Drove through the clouds in the mountains to start this one.'
+      },
+      {
+        id: 12,
+        url: '/photos/london/madeira/pr6_waterfall.JPG',
+        alt: 'PR 6.3',
+        caption: 'Hiker mogging under the waterfall at the end of PR6.3.'
+      },
+      {
+        id: 13,
+        url: '/photos/london/madeira/stairway.JPG',
+        alt: 'PR1',
+        caption: 'PR1 Pico do Ariero. Hiked to the iconic Stairway to Heaven through the ice and wind. So cloudy we couldn\'t see anything.'
+      },
+      {
+        id: 14,
+        url: '/photos/london/madeira/donkey.JPG',
+        alt: 'Donkey',
+        caption: 'Barely made it back from PR1, it was so cold. Andoni rolled his ankle on the way down PR3, but me and Evan sent it under 2hrs.'
+      },
+      {
+        id: 15,
+        url: '/photos/london/madeira/seixal_1.JPG',
+        alt: 'Seixal 1',
+        caption: 'Drove to Seixal for the black sand beach. We stopped to get espetada and ran into Mason & JP\'s gang.'
+      },
+      {
+        id: 16,
+        url: '/photos/london/madeira/seixal_2.JPG',
+        alt: 'Seixal 2',
+        caption: 'Evan looking cute out there ;3'
+      },
+      {
+        id: 17,
+        url: '/photos/london/madeira/seixal_3.JPG',
+        alt: 'Seixal 3',
+        caption: 'The black sand of Seixal Beach! Andoni took a nap.'
+      },
+      {
+        id: 18,
+        url: '/photos/london/madeira/seixal_evan.JPG',
+        alt: 'Seixal Evan',
+        caption: 'Evan pondering the mysteries of life.'
+      },
+      {
+        id: 19,
+        url: '/photos/london/madeira/suitcase.JPG',
+        alt: 'Suitcase',
+        caption: 'Checked out of our Airbnb but still had time for the beach.'
+      },
+      {
+        id: 20,
+        url: '/photos/london/madeira/gc_beach.JPG',
+        alt: 'GC Beach',
+        caption: 'GC looking tuff.'
+      },
+      {
+        id: 21,
+        url: '/photos/london/madeira/gc_dog.JPG',
+        alt: 'GC Dog',
+        caption: 'GC being loving and tender.'
+      },
+      {
+        id: 22,
+        url: '/photos/london/madeira/cars.JPG',
+        alt: 'Cars',
+        caption: 'Security at ND london told me to try Bacalhau. Was so good.'
+      },
+      {
+        id: 23,
+        url: '/photos/london/madeira/love_madeira.JPG',
+        alt: 'Love Madeira',
+        caption: 'Prego no Bolo do Caco!'
+      },
+      {
+        id: 24,
+        url: '/photos/london/madeira/gang.JPG',
+        alt: 'gang',
+        caption: 'Great memories with the gang.'
+      },
     ]
   },
   rome:{
     name: 'Rome',
-    descrition: '3.10 - 3.11.26 | ',
+    description: '3.10 - 3.11.26 | Rome was Visited in a Night.',
     photos: [
-      {}
+      {
+        id: 1,
+        url: '/photos/london/rome/vatican_1.JPG',
+        alt: 'Vatican 1',
+        caption: 'Flew into Rome from Madeira during Spring Break.'
+      },
+      {
+        id: 2,
+        url: '/photos/london/rome/door.JPG',
+        alt: 'Door',
+        caption: 'Woman smoking on her porch. Contrast between vacation and home.'
+      },
+      {
+        id: 3,
+        url: '/photos/london/rome/trevi.JPG',
+        alt: 'Trevi Fountain',
+        caption: 'Evan recreated his childhood pictures at Trevi Fountain. Free Limoncello tasting on the streets nearby.'
+      },
+      {
+        id: 4,
+        url: '/photos/london/rome/colosseum_1.JPG',
+        alt: 'Coolosseum 1',
+        caption: 'Ate really good gelato and pasta.'
+      },
+      {
+        id: 5,
+        url: '/photos/london/rome/colosseum_2.JPG',
+        alt: 'Coolosseum 2',
+        caption: 'But the best was the Roman oxtail stew. So so yummy.'
+      },
+      {
+        id: 6,
+        url: '/photos/london/rome/colosseum_3.JPG',
+        alt: 'Colosseum 3',
+        caption: 'Got kicked off the wall I was sitting at by this guy selling paintings.'
+      },
+      {
+        id: 7,
+        url: '/photos/london/rome/vatican_2.JPG',
+        alt: 'Vatican 2',
+        caption: 'Waiting in line for entrance into St. Peter\'s Basilica.'
+      },
+      {
+        id: 8,
+        url: '/photos/london/rome/vatican_3.JPG',
+        alt: 'Vatican 3',
+        caption: 'Fountain gleaming in the sun.'
+      },
+      {
+        id: 9,
+        url: '/photos/london/rome/vatican_4.JPG',
+        alt: 'Vatican 4',
+        caption: 'Entering the nave. How do they get so much detail on that?'
+      },
+      {
+        id: 10,
+        url: '/photos/london/rome/vatican_5.JPG',
+        alt: 'Vatican 5',
+        caption: 'The altar.'
+      },
+      {
+        id: 11,
+        url: '/photos/london/rome/vatican_6.JPG',
+        alt: 'Vatican 6',
+        caption: 'More decorations on the ceiling.'
+      },
+      {
+        id: 12,
+        url: '/photos/london/rome/emmanuel.JPG',
+        alt: 'Vittorio Emmanuel',
+        caption: 'Monument to Victor Emmanuel II, walking back from the Colosseum.'
+      }
     ]
   },
   pompeii:{
     name: 'Pompeii',
-    descrition: '3.12.26 | ',
+    description: '3.12.26 | ',
     photos: [
-      {}
+      {
+        id: 1,
+        url: '/photos/london/pompeii/pine.JPG',
+        alt: 'Pine Tree',
+        caption: 'Italian stone pine tree. I learned about this in Roman Britain class.'
+      },
+      {
+        id: 2,
+        url: '/photos/london/pompeii/street.JPG',
+        alt: 'Street',
+        caption: 'Walking down a 2000-year-old street.'
+      },
+      {
+        id: 3,
+        url: '/photos/london/pompeii/kodak.JPG',
+        alt: 'Kodak',
+        caption: 'The modern city felt emptier than the Roman one. But this shop near the train station looked cool.'
+      },
+      {
+        id: 4,
+        url: '/photos/london/pompeii/pillars.JPG',
+        alt: 'Pillars',
+        caption: 'The pillars make nice repetition.'
+      },
+      {
+        id: 5,
+        url: '/photos/london/pompeii/close.JPG',
+        alt: 'Close',
+        caption: 'Close up of the achitecture. I wonder how much was original.'
+      },
+      {
+        id: 6,
+        url: '/photos/london/pompeii/theater.JPG',
+        alt: 'Theater',
+        caption: 'The Ampitheater of Pompeii. Ran to get a peek before the park closed.'
+      },
+      {
+        id: 7,
+        url: '/photos/london/pompeii/tower.JPG',
+        alt: 'Tower',
+        caption: 'Santuario della Beata Vergine Maria del Santo Rosario di Pompei in the piazza outside the train station from Rome.'
+      },
+      {
+        id: 8,
+        url: '/photos/london/pompeii/vesuvius_1.JPG',
+        alt: 'Vesuvius 1',
+        caption: 'Mount Vesuvius calmly overlooks.'
+      },
+      {
+        id: 9,
+        url: '/photos/london/pompeii/vesuvius_2.JPG',
+        alt: 'Vesuvius 2',
+        caption: 'Man vs. Nature.'
+      }
     ]
   },
   amalfi:{
     name: 'Amalfi Coast and Salerno',
-    descrition: '3.13 - 3.15.26 | ',
+    description: '3.13 - 3.15.26 | End of Spring Break',
+    photos: [
+      {
+        id: 1,
+        url: '/photos/london/amalfi/atrani.JPG',
+        alt: 'Atrani',
+        caption: 'View of Atrani from the boat. We stayed in Salerno and took the ferry to the coastal towns.'
+      },
+      {
+        id: 2,
+        url: '/photos/london/amalfi/amalfi_1.JPG',
+        alt: 'Amalfi 1',
+        caption: 'Arriving in Amalfi with Evan Adam and Elliot.'
+      },
+      {
+        id: 3,
+        url: '/photos/london/amalfi/castle.JPG',
+        alt: 'Castle',
+        caption: 'The edge of Amalfi, wrapping around to Atrani. I frolicked with Evan on the road.'
+      },
+      {
+        id: 4,
+        url: '/photos/london/amalfi/couple_1.JPG',
+        alt: 'Couple 1',
+        caption: 'Enjoying each other on the beach.'
+      },
+      {
+        id: 5,
+        url: '/photos/london/amalfi/dock.JPG',
+        alt: 'Dock',
+        caption: 'Ferry arriving to a busy dock in Amalfi.'
+      },
+      {
+        id: 6,
+        url: '/photos/london/amalfi/boat.JPG',
+        alt: 'Boat',
+        caption: 'Sailboat on the coast rolling gently on the waves.'
+      },
+      {
+        id: 7,
+        url: '/photos/london/amalfi/couple_2.JPG',
+        alt: 'Couple 2',
+        caption: 'Love is abundant in Italy.'
+      },
+      {
+        id: 8,
+        url: '/photos/london/amalfi/sunset_1.JPG',
+        alt: 'Sunset 1',
+        caption: 'The sun sets on the horizon... on the Amalfi Coast... on Spring Break... on our time together.'
+      },
+      {
+        id: 9,
+        url: '/photos/london/amalfi/sunset_2.JPG',
+        alt: 'Sunset 2',
+        caption: 'Savor this time with your friends and forget your worries.'
+      },
+      {
+        id: 10,
+        url: '/photos/london/amalfi/fishing.JPG',
+        alt: 'Fishing',
+        caption: 'Fishing buddies in Maiori.'
+      },
+      {
+        id: 11,
+        url: '/photos/london/amalfi/fountain.JPG',
+        alt: 'Fountain',
+        caption: 'Art is in the small details.'
+      },
+      {
+        id: 12,
+        url: '/photos/london/amalfi/fiordo.JPG',
+        alt: 'Fiordo di Furore',
+        caption: 'Just enough coins to catch the bus to the Fiordo. I don\'t know how we didn\'t fall off the cliff...or get abducted by that one guy in the car.'
+      },
+      {
+        id: 13,
+        url: '/photos/london/amalfi/maiori.JPG',
+        alt: 'Maiori',
+        caption: 'Path of the Lemons from Maiori to Minori.'
+      },
+      {
+        id: 14,
+        url: '/photos/london/amalfi/lemon.JPG',
+        alt: 'Lemons',
+        caption: 'Terraces of lemons growing out of the mountain.'
+      },
+      {
+        id: 15,
+        url: '/photos/london/amalfi/cat.JPG',
+        alt: 'Cat',
+        caption: 'Elliot and Adam rizzing up this cat.'
+      },
+      {
+        id: 16,
+        url: '/photos/london/amalfi/restaurant.JPG',
+        alt: 'Restaurant',
+        caption: 'Restaurant perched between the road and the cliffs.'
+      },
+      {
+        id: 17,
+        url: '/photos/london/amalfi/stairs.JPG',
+        alt: 'Stairs',
+        caption: 'Amalfi is a town full of stairs.'
+      },
+      {
+        id: 18,
+        url: '/photos/london/amalfi/amalfi_2.JPG',
+        alt: 'Amalfi 2',
+        caption: 'We walked through this random alleyway, and out of the buildings to this insane view.'
+      },
+      {
+        id: 19,
+        url: '/photos/london/amalfi/ellito.JPG',
+        alt: 'Ellito',
+        caption: 'Elliot is the cat master. I almost forgot the 5 Euro margherita pizza.'
+      },
+      {
+        id: 20,
+        url: '/photos/london/amalfi/apartment.JPG',
+        alt: 'Apartment',
+        caption: 'Classic Mediterranean apartments.'
+      },
+      {
+        id: 21,
+        url: '/photos/london/amalfi/flag.JPG',
+        alt: 'Flag',
+        caption: 'Goodbye, Amalfi Coast.'
+      }
+    ]
+  },
+  glasgow:{
+    name: 'Glasgow & The Scottish Highlands',
+    description: ' | ',
     photos: [
       {}
     ]
   },
-
+  york:{
+    name: 'York',
+    description: ' | ',
+    photos: [
+      {}
+    ]
+  },
+  monaco:{
+    name: 'Monaco',
+    description: ' | ',
+    photos: [
+      {}
+    ]
+  },
+  dubrovnik:{
+    name: 'Dubrovnik',
+    description: ' | ',
+    photos: [
+      {}
+    ]
+  },
+  switzerland:{
+    name: 'Zurich, Interlaken, & Lucerne',
+    description: ' | ',
+    photos: [
+      {}
+    ]
+  },
+  me:{
+    name: 'Behind the Camera',
+    description: 'Pictures of me from friends and family',
+    photos: [
+      {
+        id: 1,
+        url: '/photos/me/me_and_dog.JPG',
+        alt: 'Me and Dog',
+        caption: 'Me and Dog in Lyon. Photo by Sarah.'
+      },
+      {
+        id: 2,
+        url: '/photos/me/me_and_henry.JPG',
+        alt: 'Me and Henry',
+        caption: 'Me and Henry in Lyon. Photo by Aynaz.'
+      },
+      {
+        id: 3,
+        url: '/photos/me/me_and_louvre.JPG',
+        alt: 'Me and Louvre',
+        caption: 'Me and the Louvre in Paris. Photo by Henry.'
+      },
+      {
+        id: 4,
+        url: '/photos/me/me_and_mountain.JPG',
+        alt: 'Me and Mountain',
+        caption: 'Me and Mountain in Chamonix. Photo by Henry.'
+      },
+      {
+        id: 5,
+        url: '/photos/me/me_and_train.JPG',
+        alt: 'Me and Train',
+        caption: 'Me and Train in Chamonix. Photo by Henry.'
+      },
+      {
+        id: 6,
+        url: '/photos/me/me_in_mirror.JPG',
+        alt: 'Me in Mirror',
+        caption: 'Me in Mirror in Leeds. Photo by Me.'
+      },
+      {
+        id: 7,
+        url: '/photos/me/me_in_istanbul_1.JPG',
+        alt: 'Me in Istanbul 1',
+        caption: 'Me on the way to Fish Home in Istanbul. Photo by Evan.'
+      },
+      {
+        id: 8,
+        url: '/photos/me/me_in_istanbul_2.JPG',
+        alt: 'Me in Istanbul 2',
+        caption: 'Me on the Bosphorus Strait in Istanbul. Photo by Evan.'
+      }
+    ]
+  }
 }
 
 export const galleryNav = [
+  {
+    type: 'gallery',
+    id: 'me',
+    name: 'Behind the Camera'
+  },
   { type: 'gallery', 
-    id: 'home' 
+    id: 'home',
+    name: 'Home'
   },
   { type: 'folder', 
     id: 'lyon-research',
@@ -1145,10 +1738,11 @@ export const galleryNav = [
       'nice',
       'paris',
       'turin'
-    ] },
-    { type: 'folder',
+    ] 
+  },
+  { type: 'folder',
     id: 'study-abroad',
-    name: 'Study Abroad',
+    name: 'Study Abroad London',
     galleries: [
       'london',
       'leeds',
@@ -1162,7 +1756,13 @@ export const galleryNav = [
       'madeira',
       'rome',
       'pompeii',
-      'amalfi'
+      'amalfi',
+      'glasgow',
+      'york',
+      'monaco',
+      'dubrovnik',
+      'switzerland'
     ]
   },
+  
 ]
