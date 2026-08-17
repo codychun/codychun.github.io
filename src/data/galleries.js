@@ -1711,7 +1711,31 @@ export const galleries = {
         url: '/photos/me/me_in_istanbul_2.JPG',
         alt: 'Me in Istanbul 2',
         caption: 'Me on the Bosphorus Strait in Istanbul. Photo by Evan.'
-      }
+      },
+      {
+        id: 9,
+        url: '/photos/me/me_in_seixal.JPG',
+        alt: 'Me in Seixal',
+        caption: 'Me in Seixal. Photo by Andoni.'
+      },
+      {
+        id: 10,
+        url: '/photos/me/me_and_gang_in_seixal.JPG',
+        alt: 'Me and Gang in Seixal',
+        caption: 'Me and Gang in Seixal. Photo by Evan.'
+      },
+      {
+        id: 11,
+        url: '/photos/me/me_at_peter.JPG',
+        alt: 'Me at Peter',
+        caption: 'Me at St. Peter\'s. Photo by Adam.'
+      },
+      {
+        id: 12,
+        url: '/photos/me/me_and_colosseo.JPG',
+        alt: 'Me and Colosseo',
+        caption: 'Me and Colosseo. Photo by Adam.'
+      },
     ]
   }
 }
